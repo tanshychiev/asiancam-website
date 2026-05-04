@@ -6,169 +6,269 @@
   <title>Certificates | Asian Cam Advisory</title>
 
   <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/certificates.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-
     <a href="index.html" class="logo-wrap">
-      <img src="assets/img/logo.png" class="logo-img">
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
     </a>
 
     <button class="menu-btn" onclick="toggleMenu()">MENU</button>
 
     <nav class="menu" id="mainMenu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="clients.html">Clients</a>
-      <a href="staff.html">Team</a>
-      <a href="certificates.html" class="active">Certificates</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About Us</a>
+      <a href="services.html" data-i18n="nav_services">Services</a>
+      <a href="clients.html" data-i18n="nav_clients">Clients</a>
+      <a href="staff.html" data-i18n="nav_team">Team</a>
+      <a href="certificates.html" class="active" data-i18n="nav_cert">Certificates</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
     </nav>
 
     <div class="langs">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('kh')">KH</button>
-      <button onclick="setLang('cn')">中文</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
     </div>
-
   </div>
 </header>
 
-<!-- HERO -->
-<section class="page-hero">
-  <div class="container page-hero-inner">
+<section class="cert-hero">
+  <div class="cert-hero-bg">
+    <img src="assets/img/pages/certificates-hero.jpg" alt="Certificates">
+  </div>
+  <div class="cert-hero-overlay"></div>
+  <div class="cert-hero-dots"></div>
+
+  <div class="container cert-hero-inner">
+    <div class="cert-hero-text">
+      <span data-i18n="cert_hero_label">OUR CERTIFICATIONS</span>
+      <h1 data-i18n="cert_hero_title">Certified. Trusted. Recognized.</h1>
+      <p data-i18n="cert_hero_desc">
+        Official registration, tax certificates, professional licenses and memberships that support our compliance and professional standards.
+      </p>
+      <a href="#certificatesList" class="hero-btn">
+        <span data-i18n="cert_hero_btn">View Certificates</span>
+        <b>›</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cert-section section" id="certificatesList">
+  <div class="container">
+
+    <div class="section-head">
+      <span data-i18n="cert_section_label">OUR CERTIFICATES & LICENSES</span>
+      <h2 data-i18n="cert_section_title">Certificates & Licenses</h2>
+      <p data-i18n="cert_section_desc">Click any certificate image to preview it clearly.</p>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <span>01</span>
+        <h3 data-i18n="cert_group_1">Business Registration Certificate</h3>
+        <p data-i18n="cert_group_1_desc">Business registration certificate / Commercial registration document.</p>
+      </div>
+
+      <div class="cert-grid three">
+        <div class="cert-card" data-preview="assets/img/certificates/business-1.jpg">
+          <img src="assets/img/certificates/business-1.jpg" alt="">
+          <h4 data-i18n="cert_1">Business Registration Certificate I</h4>
+        </div>
+        <div class="cert-card" data-preview="assets/img/certificates/business-2.jpg">
+          <img src="assets/img/certificates/business-2.jpg" alt="">
+          <h4 data-i18n="cert_2">Business Registration Certificate II</h4>
+        </div>
+        <div class="cert-card" data-preview="assets/img/certificates/business-3.jpg">
+          <img src="assets/img/certificates/business-3.jpg" alt="">
+          <h4 data-i18n="cert_3">Business Registration Certificate III</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <span>02</span>
+        <h3 data-i18n="cert_group_2">Tax Registration & Patent Tax 2024</h3>
+        <p data-i18n="cert_group_2_desc">Tax Registration Certificate (VAT), GDT notification and Patent Tax 2024.</p>
+      </div>
+
+      <div class="cert-grid three">
+        <div class="cert-card" data-preview="assets/img/certificates/vat-1.jpg">
+          <img src="assets/img/certificates/vat-1.jpg" alt="">
+          <h4 data-i18n="cert_4">Tax Registration Certificate (VAT)</h4>
+        </div>
+        <div class="cert-card" data-preview="assets/img/certificates/gdt-notification.jpg">
+          <img src="assets/img/certificates/gdt-notification.jpg" alt="">
+          <h4 data-i18n="cert_5">Notification of the GDT on Tax Registration</h4>
+        </div>
+        <div class="cert-card" data-preview="assets/img/certificates/patent-2024.jpg">
+          <img src="assets/img/certificates/patent-2024.jpg" alt="">
+          <h4 data-i18n="cert_6">Patent Tax Year 2024</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <span>03</span>
+        <h3 data-i18n="cert_group_3">Patent Tax 2025 & VAT Certificate</h3>
+        <p data-i18n="cert_group_3_desc">Patent Tax Year 2025 and Tax Registration Certificate (VAT).</p>
+      </div>
+
+      <div class="cert-grid two">
+        <div class="cert-card" data-preview="assets/img/certificates/patent-2025.jpg">
+          <img src="assets/img/certificates/patent-2025.jpg" alt="">
+          <h4 data-i18n="cert_7">Patent Tax Year 2025</h4>
+        </div>
+        <div class="cert-card" data-preview="assets/img/certificates/vat-2.jpg">
+          <img src="assets/img/certificates/vat-2.jpg" alt="">
+          <h4 data-i18n="cert_8">Tax Registration Certificate (VAT)</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <span>04</span>
+        <h3 data-i18n="cert_group_4">Tax Agent License</h3>
+        <p data-i18n="cert_group_4_desc">Tax Agent License from 2015 to present.</p>
+      </div>
+
+      <div class="cert-grid six">
+        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-1.jpg"><img src="assets/img/certificates/tax-agent-1.jpg" alt=""><h4 data-i18n="cert_9">Tax Agent License I</h4></div>
+        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-2.jpg"><img src="assets/img/certificates/tax-agent-2.jpg" alt=""><h4 data-i18n="cert_10">Tax Agent License II</h4></div>
+        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-3.jpg"><img src="assets/img/certificates/tax-agent-3.jpg" alt=""><h4 data-i18n="cert_11">Tax Agent License III</h4></div>
+        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-4.jpg"><img src="assets/img/certificates/tax-agent-4.jpg" alt=""><h4 data-i18n="cert_12">Tax Agent License IV</h4></div>
+        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-5.jpg"><img src="assets/img/certificates/tax-agent-5.jpg" alt=""><h4 data-i18n="cert_13">Tax Agent License V</h4></div>
+        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-6.jpg"><img src="assets/img/certificates/tax-agent-6.jpg" alt=""><h4 data-i18n="cert_14">Tax Agent License VI</h4></div>
+      </div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <span>05</span>
+        <h3 data-i18n="cert_group_5">KICPAA Affiliate Member</h3>
+        <p data-i18n="cert_group_5_desc">An Affiliate Member, Accounting and Auditing by KICPAA.</p>
+      </div>
+
+      <div class="cert-grid two">
+        <div class="cert-card wide" data-preview="assets/img/certificates/kicpaa-1.jpg">
+          <img src="assets/img/certificates/kicpaa-1.jpg" alt="">
+          <h4 data-i18n="cert_15">KICPAA Affiliate Member - Company</h4>
+        </div>
+        <div class="cert-card wide" data-preview="assets/img/certificates/kicpaa-2.jpg">
+          <img src="assets/img/certificates/kicpaa-2.jpg" alt="">
+          <h4 data-i18n="cert_16">KICPAA Affiliate Member - Individual</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-head">
+        <span>06</span>
+        <h3 data-i18n="cert_group_6">ACAR Accounting Level II Practice License</h3>
+        <p data-i18n="cert_group_6_desc">Accounting and Auditing Regulator (ACAR) for Accounting Level II Practice License.</p>
+      </div>
+
+      <div class="cert-grid two">
+        <div class="cert-card wide" data-preview="assets/img/certificates/acar-1.jpg">
+          <img src="assets/img/certificates/acar-1.jpg" alt="">
+          <h4 data-i18n="cert_17">ACAR Accounting Level II Practice License I</h4>
+        </div>
+        <div class="cert-card wide" data-preview="assets/img/certificates/acar-2.jpg">
+          <img src="assets/img/certificates/acar-2.jpg" alt="">
+          <h4 data-i18n="cert_18">ACAR Accounting Level II Practice License II</h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container trust-grid">
     <div>
-      <div class="label">Certificates</div>
-      <h1>Certificates & Licenses</h1>
-      <p>Registration, tax certificates, professional license and memberships.</p>
+      <b>🛡</b>
+      <h3 data-i18n="cert_trust_1_title">Legally Compliant</h3>
+      <p data-i18n="cert_trust_1_desc">Officially registered certificates and licenses.</p>
     </div>
-    <img src="assets/img/logo.png" class="page-logo">
-  </div>
-</section>
-
-<!-- CERTIFICATES -->
-<section class="section">
-  <div class="container">
-
-    <div class="cert-grid">
-
-      <!-- BUSINESS (3 SEPARATE) -->
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/business-1.jpg">
-        </div>
-        <h3>Business Registration Certificate I</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/business-2.jpg">
-        </div>
-        <h3>Business Registration Certificate II</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/business-3.jpg">
-        </div>
-        <h3>Business Registration Certificate III</h3>
-      </div>
-
-      <!-- OTHER CERT -->
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/gdt-vat.jpg">
-        </div>
-        <h3>GDT Tax Registration Certificate</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/patent-2024.jpg">
-        </div>
-        <h3>Patent Tax 2024</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/patent-2025.jpg">
-        </div>
-        <h3>Patent Tax 2025</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/tax-agent.jpg">
-        </div>
-        <h3>Tax Agent License</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/kicpaa.jpg">
-        </div>
-        <h3>KICPAA Affiliate Member</h3>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-img">
-          <img src="assets/img/certificates/acar.jpg">
-        </div>
-        <h3>ACAR Accounting Level II License</h3>
-      </div>
-
+    <div>
+      <b>🏅</b>
+      <h3 data-i18n="cert_trust_2_title">Professional Standards</h3>
+      <p data-i18n="cert_trust_2_desc">Maintaining accounting, tax and compliance standards.</p>
     </div>
-
+    <div>
+      <b>🔒</b>
+      <h3 data-i18n="cert_trust_3_title">Reliable & Secure</h3>
+      <p data-i18n="cert_trust_3_desc">Supporting clients with trust and confidentiality.</p>
+    </div>
+    <div>
+      <b>🤝</b>
+      <h3 data-i18n="cert_trust_4_title">Trusted by Clients</h3>
+      <p data-i18n="cert_trust_4_desc">Building confidence through verified credentials.</p>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready to strengthen your business compliance?</h2>
-    <p>Speak with Asian Cam Advisory for accounting, tax and consulting support.</p>
-    <a href="contact.html" class="btn">Contact Us</a>
+<section class="cert-cta">
+  <div class="container cert-cta-inner">
+    <div>
+      <h2 data-i18n="cta_title">Ready to strengthen your business compliance?</h2>
+      <p data-i18n="cta_text">Speak with Asian Cam Advisory for accounting, tax and consulting support.</p>
+    </div>
+    <a href="contact.html" class="btn white" data-i18n="cta_btn">Contact Us</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-grid">
-
     <div>
-      <img src="assets/img/logo.png" class="logo-img">
-      <p>Professional accounting, tax and business advisory services in Cambodia.</p>
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
     </div>
 
     <div>
-      <h3>Pages</h3>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="clients.html">Clients</a>
-      <a href="staff.html">Team</a>
-      <a href="certificates.html">Certificates</a>
+      <h3 data-i18n="footer_pages">Pages</h3>
+      <a href="about.html" data-i18n="footer_about">About</a>
+      <a href="services.html" data-i18n="footer_services">Services</a>
+      <a href="clients.html" data-i18n="footer_clients">Clients</a>
+      <a href="staff.html" data-i18n="footer_team">Team</a>
+      <a href="certificates.html" data-i18n="footer_cert">Certificates</a>
     </div>
 
     <div>
-      <h3>Contact</h3>
-      <p>Phnom Penh, Cambodia</p>
+      <h3 data-i18n="footer_contact">Contact</h3>
+      <p data-i18n="footer_address">Phnom Penh, Cambodia</p>
       <p>012 777 842 / 070 319 777</p>
       <p>asiancam@gmail.com</p>
     </div>
-
   </div>
 
-  <div class="container copy">
-    © 2026 ASIAN CAM ADVISORY CO., LTD.
-  </div>
+  <div class="container copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD.</div>
 </footer>
 
-<script src="assets/js/lang.js"></script>
+<div class="cert-modal" id="certModal">
+  <button class="cert-modal-close" type="button">×</button>
 
+  <div class="cert-modal-toolbar">
+    <button type="button" id="zoomOutBtn">−</button>
+    <button type="button" id="zoomResetBtn">Reset</button>
+    <button type="button" id="zoomInBtn">+</button>
+  </div>
+
+  <div class="cert-modal-scroll">
+    <img id="certModalImg" src="" alt="Certificate Preview">
+  </div>
+</div>
+
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/certificates-lang.js"></script>
+<script src="assets/js/certificates-gallery.js"></script>
 </body>
 </html>
