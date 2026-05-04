@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Asian Cam Advisory</title>
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo-wrap">
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+
+    <nav class="menu" id="mainMenu">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" class="active" data-i18n="nav_about">About Us</a>
+      <a href="services.html" data-i18n="nav_services">Services</a>
+      <a href="clients.html" data-i18n="nav_clients">Clients</a>
+      <a href="staff.html" data-i18n="nav_team">Team</a>
+      <a href="certificates.html" data-i18n="nav_cert">Certificates</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    </nav>
+
+    <div class="langs">
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero-home">
+  <div class="about-hero-bg">
+    <img src="assets/img/pages/about-building.png" alt="Asian Cam Building">
+  </div>
+
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-dots"></div>
+
+  <div class="container about-hero-inner">
+    <div class="about-hero-text">
+      <span class="hero-label" data-i18n="about_label">ABOUT US</span>
+
+      <h1 data-i18n="about_title">About Our Company</h1>
+
+      <p data-i18n="about_text">
+        Asian Cam Advisory Co., Ltd is based in Phnom Penh, providing professional
+        accounting, tax, payroll and business advisory support for companies that need
+        clarity, compliance and long-term guidance.
+      </p>
+
+      <a href="#our-story" class="hero-btn">
+        <span data-i18n="about_btn">Explore Our Company</span>
+        <b>›</b>
+      </a>
+
+      <div class="hero-points">
+        <div>
+          <strong data-i18n="point1_title">Local Expertise</strong>
+          <span data-i18n="point1_text">Cambodian business knowledge</span>
+        </div>
+        <div>
+          <strong data-i18n="point2_title">Professional Standard</strong>
+          <span data-i18n="point2_text">Clear process and reporting</span>
+        </div>
+        <div>
+          <strong data-i18n="point3_title">Long-Term Trust</strong>
+          <span data-i18n="point3_text">Support beyond one service</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="service-strip">
+  <div class="container service-box">
+    <div class="service-item">
+      <div class="service-icon">▦</div>
+      <h3 data-i18n="mini1">Accounting Support</h3>
+      <p data-i18n="mini1p">Organized records and clear financial reporting.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-icon">▤</div>
+      <h3 data-i18n="mini2">Tax Compliance</h3>
+      <p data-i18n="mini2p">Helping businesses meet tax duties correctly.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-icon">♙</div>
+      <h3 data-i18n="mini3">Business Advisory</h3>
+      <p data-i18n="mini3p">Practical guidance for stable business growth.</p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-icon">♟</div>
+      <h3 data-i18n="mini4">Payroll & HR</h3>
+      <p data-i18n="mini4p">Payroll and staff administration support.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div><strong>10+</strong><span data-i18n="stat_year">Years Experience</span></div>
+    <div><strong>200+</strong><span data-i18n="stat_client">Clients Supported</span></div>
+    <div><strong>500+</strong><span data-i18n="stat_project">Projects Completed</span></div>
+    <div><strong>15+</strong><span data-i18n="stat_team">Professional Team</span></div>
+  </div>
+</section>
+
+<section class="about-story section" id="our-story">
+  <div class="container story-grid">
+    <div class="story-text">
+      <span class="eyebrow" data-i18n="story_label">01 / OUR STORY</span>
+      <h2 data-i18n="story_title">We help companies stay organized, compliant and ready to grow</h2>
+      <p data-i18n="story_desc_1">
+        Asian Cam Advisory was established to support businesses that need dependable financial
+        and tax guidance in Cambodia.
+      </p>
+      <p data-i18n="story_desc_2">
+        Our work focuses on building clear systems, reducing compliance risk and helping owners
+        understand their business numbers with confidence.
+      </p>
+    </div>
+
+    <div class="story-cards">
+      <div class="story-card" data-i18n="story_card_1">Practical accounting and tax support</div>
+      <div class="story-card" data-i18n="story_card_2">Clear communication with clients</div>
+      <div class="story-card" data-i18n="story_card_3">Professional and responsible service</div>
+      <div class="story-card" data-i18n="story_card_4">Long-term relationship focused</div>
+    </div>
+  </div>
+</section>
+
+<section class="office-section section soft">
+  <div class="container office-grid">
+    <div class="image-card">
+      <img src="assets/img/pages/about-office.png" alt="Asian Cam Office">
+    </div>
+
+    <div class="office-text">
+      <span class="eyebrow" data-i18n="office_label">02 / OUR OFFICE</span>
+      <h2 data-i18n="office_title">A professional space for consultation and collaboration</h2>
+      <p data-i18n="office_desc">
+        Our Phnom Penh office provides a clean, comfortable and professional environment for client meetings,
+        business discussions and advisory support.
+      </p>
+      <p data-i18n="office_address">
+        Address: 1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune,
+        Toul Kork District, Phnom Penh City, Cambodia.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="location-section section">
+  <div class="container location-grid">
+    <div class="location-text">
+      <span class="eyebrow" data-i18n="location_label">03 / PHNOM PENH</span>
+      <h2 data-i18n="location_title">Proudly based in the heart of Cambodia</h2>
+      <p data-i18n="location_desc">
+        Being based in Phnom Penh allows us to understand local business requirements while delivering
+        services with professional standards.
+      </p>
+      <a href="contact.html" class="btn primary" data-i18n="cta_btn">Contact Us</a>
+    </div>
+
+    <div class="image-card">
+      <img src="assets/img/pages/phnom-penh-skyline.png" alt="Phnom Penh Skyline">
+    </div>
+  </div>
+</section>
+
+<section class="values-section section soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="values_label">04 / OUR VALUES</span>
+      <h2 data-i18n="values_title">What guides the way we work</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">♢</div>
+        <h3 data-i18n="value_1_title">Integrity</h3>
+        <p data-i18n="value_1_desc">We work with honesty, confidentiality and responsibility.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">◯</div>
+        <h3 data-i18n="value_2_title">Clarity</h3>
+        <p data-i18n="value_2_desc">We make accounting and tax matters easier to understand.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">✦</div>
+        <h3 data-i18n="value_3_title">Commitment</h3>
+        <p data-i18n="value_3_desc">We support clients with care and consistency.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">♡</div>
+        <h3 data-i18n="value_4_title">Growth</h3>
+        <p data-i18n="value_4_desc">We help businesses build stronger financial foundations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-final-cta">
+  <div class="container final-cta-inner">
+    <div>
+      <h2 data-i18n="cta_title">Need a reliable accounting and tax partner?</h2>
+      <p data-i18n="cta_text">Speak with Asian Cam Advisory for professional business support.</p>
+    </div>
+    <a href="contact.html" class="btn white" data-i18n="cta_btn">Contact Us</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
+    </div>
+
+    <div>
+      <h3 data-i18n="footer_pages">Pages</h3>
+      <a href="about.html" data-i18n="footer_about">About</a>
+      <a href="services.html" data-i18n="footer_services">Services</a>
+      <a href="clients.html" data-i18n="footer_clients">Clients</a>
+      <a href="staff.html" data-i18n="footer_team">Team</a>
+      <a href="certificates.html" data-i18n="footer_cert">Certificates</a>
+    </div>
+
+    <div>
+      <h3 data-i18n="footer_contact">Contact</h3>
+      <p data-i18n="footer_address">Phnom Penh, Cambodia</p>
+      <p>012 777 842 / 070 319 777</p>
+      <p>asiancam@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="container copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD.</div>
+</footer>
+
+<script src="assets/js/lang.js"></script>
+</body>
+</html>

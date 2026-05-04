@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#EAF8FF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient></defs>
+<rect width="900" height="600" fill="url(#g)"/>
+<rect x="35" y="35" width="830" height="530" rx="28" fill="none" stroke="#20AEEB" stroke-width="4"/>
+<text x="450" y="280" font-family="Arial" font-size="38" fill="#073B67" text-anchor="middle">Sorn Sreyneath</text>
+<text x="450" y="330" font-family="Arial" font-size="22" fill="#20AEEB" text-anchor="middle">Replace this image</text>
+</svg>

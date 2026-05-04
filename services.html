@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Asian Cam Advisory</title>
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/services.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo-wrap">
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+
+    <nav class="menu" id="mainMenu">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About Us</a>
+      <a href="services.html" class="active" data-i18n="nav_services">Services</a>
+      <a href="clients.html" data-i18n="nav_clients">Clients</a>
+      <a href="staff.html" data-i18n="nav_team">Team</a>
+      <a href="certificates.html" data-i18n="nav_cert">Certificates</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    </nav>
+
+    <div class="langs">
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
+    </div>
+  </div>
+</header>
+
+<section class="services-hero">
+  <div class="services-hero-bg">
+    <img src="assets/img/pages/services-hero.png" alt="Asian Cam Services">
+  </div>
+
+  <div class="services-hero-overlay"></div>
+  <div class="services-hero-dots"></div>
+
+  <div class="container services-hero-inner">
+    <div class="services-hero-text">
+      <span data-i18n="service_hero_label">OUR SERVICES</span>
+      <h1 data-i18n="service_hero_title">Professional Accounting & Tax Solutions</h1>
+      <p data-i18n="service_hero_desc">
+        We provide complete accounting, tax compliance, payroll and business advisory services
+        to support your business growth with confidence.
+      </p>
+
+      <a href="contact.html" class="hero-btn">
+        <span data-i18n="btn_consult">Free Consultation</span>
+        <b>›</b>
+      </a>
+
+      <div class="hero-points">
+        <div>
+          <strong data-i18n="service_point_1">Trusted Expertise</strong>
+          <span data-i18n="service_point_1_desc">Years of experience you can rely on.</span>
+        </div>
+        <div>
+          <strong data-i18n="service_point_2">Client Focused</strong>
+          <span data-i18n="service_point_2_desc">Solutions tailored to your business needs.</span>
+        </div>
+        <div>
+          <strong data-i18n="service_point_3">Quality Service</strong>
+          <span data-i18n="service_point_3_desc">Committed to reliable delivery.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="service-main section">
+  <div class="container">
+    <div class="section-head">
+      <span data-i18n="service_category_label">OUR SERVICE CATEGORIES</span>
+      <h2 data-i18n="service_category_title">Comprehensive Services for Your Business</h2>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">▦</div>
+        <h3 data-i18n="service_card_1_title">Accounting Services</h3>
+        <ul>
+          <li data-i18n="service_card_1_1">Monthly Bookkeeping</li>
+          <li data-i18n="service_card_1_2">Financial Statements Preparation</li>
+          <li data-i18n="service_card_1_3">Review Financial Statement</li>
+          <li data-i18n="service_card_1_4">Coordinate Audit Service</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">▤</div>
+        <h3 data-i18n="service_card_2_title">Tax Services</h3>
+        <ul>
+          <li data-i18n="service_card_2_1">All Tax & Accounting Support</li>
+          <li data-i18n="service_card_2_2">Corporate Tax Compliance Review</li>
+          <li data-i18n="service_card_2_3">Tax Risk Assessment & Recommendation</li>
+          <li data-i18n="service_card_2_4">Monthly & Annual Tax Returns Declaration</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">♙</div>
+        <h3 data-i18n="service_card_3_title">Advisory Services</h3>
+        <ul>
+          <li data-i18n="service_card_3_1">Tax and Accounting Consulting</li>
+          <li data-i18n="service_card_3_2">New Company Registration Consulting</li>
+          <li data-i18n="service_card_3_3">Deregistering Company Consulting</li>
+          <li data-i18n="service_card_3_4">Business Compliance Advice</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◇</div>
+        <h3 data-i18n="service_card_4_title">Audit & Compliance</h3>
+        <ul>
+          <li data-i18n="service_card_4_1">Coordinate Audit Service</li>
+          <li data-i18n="service_card_4_2">Pre-audit Accounting Report</li>
+          <li data-i18n="service_card_4_3">Certified Accounting Report</li>
+          <li data-i18n="service_card_4_4">Compliance Documentation Support</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">♢</div>
+        <h3 data-i18n="service_card_5_title">Business Support</h3>
+        <ul>
+          <li data-i18n="service_card_5_1">Business Registration Services</li>
+          <li data-i18n="service_card_5_2">Corporate Secretarial Services</li>
+          <li data-i18n="service_card_5_3">Licenses & Permit Application</li>
+          <li data-i18n="service_card_5_4">Business Process Guidance</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">♟</div>
+        <h3 data-i18n="service_card_6_title">Payroll & HR Services</h3>
+        <ul>
+          <li data-i18n="service_card_6_1">Payroll Processing</li>
+          <li data-i18n="service_card_6_2">Monthly HR Administration</li>
+          <li data-i18n="service_card_6_3">Employee Benefits Management</li>
+          <li data-i18n="service_card_6_4">Staff Records Support</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">▣</div>
+        <h3 data-i18n="service_card_7_title">Financial Advisory</h3>
+        <ul>
+          <li data-i18n="service_card_7_1">Financial Analysis</li>
+          <li data-i18n="service_card_7_2">Budgeting & Forecasting</li>
+          <li data-i18n="service_card_7_3">Cash Flow Management</li>
+          <li data-i18n="service_card_7_4">Management Reporting</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◎</div>
+        <h3 data-i18n="service_card_8_title">Other Services</h3>
+        <ul>
+          <li data-i18n="service_card_8_1">General Consulting</li>
+          <li data-i18n="service_card_8_2">Training & Workshop</li>
+          <li data-i18n="service_card_8_3">Translation Services</li>
+          <li data-i18n="service_card_8_4">Business Document Support</li>
+        </ul>
+        <a href="contact.html" data-i18n="learn_more">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div><strong>10+</strong><span data-i18n="stat_year">Years of Experience</span></div>
+    <div><strong>200+</strong><span data-i18n="stat_client">Happy Clients</span></div>
+    <div><strong>500+</strong><span data-i18n="stat_project">Projects Completed</span></div>
+    <div><strong>15+</strong><span data-i18n="stat_team">Professional Team</span></div>
+  </div>
+</section>
+
+<section class="why-section section">
+  <div class="container why-grid">
+    <div class="why-img">
+      <img src="assets/img/pages/service-detail.png" alt="Asian Cam Service Detail">
+    </div>
+
+    <div class="why-content">
+      <span data-i18n="why_label">WHY CHOOSE US</span>
+      <h2 data-i18n="why_title">Your Success is Our Commitment</h2>
+
+      <div class="why-list">
+        <div>
+          <b>◇</b>
+          <h3 data-i18n="why_1_title">Experienced Professionals</h3>
+          <p data-i18n="why_1_desc">Our team consists of qualified professionals with deep expertise in accounting and tax.</p>
+        </div>
+
+        <div>
+          <b>◎</b>
+          <h3 data-i18n="why_2_title">Client Focused</h3>
+          <p data-i18n="why_2_desc">We listen, understand and deliver solutions tailored to your business needs.</p>
+        </div>
+
+        <div>
+          <b>✓</b>
+          <h3 data-i18n="why_3_title">Reliable & Accurate</h3>
+          <p data-i18n="why_3_desc">We ensure accuracy, compliance and timely delivery in every service we provide.</p>
+        </div>
+
+        <div>
+          <b>▣</b>
+          <h3 data-i18n="why_4_title">Confidential & Secure</h3>
+          <p data-i18n="why_4_desc">Your business information is always handled with the highest confidentiality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="service-cta">
+  <div class="container service-cta-inner">
+    <div>
+      <h2 data-i18n="cta_title">Ready to Strengthen Your Business?</h2>
+      <p data-i18n="cta_text">Contact us today for professional accounting, tax and advisory support.</p>
+    </div>
+    <a href="contact.html" class="btn white" data-i18n="cta_btn">Contact Us</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
+    </div>
+
+    <div>
+      <h3 data-i18n="footer_pages">Pages</h3>
+      <a href="about.html" data-i18n="footer_about">About</a>
+      <a href="services.html" data-i18n="footer_services">Services</a>
+      <a href="clients.html" data-i18n="footer_clients">Clients</a>
+      <a href="staff.html" data-i18n="footer_team">Team</a>
+      <a href="certificates.html" data-i18n="footer_cert">Certificates</a>
+    </div>
+
+    <div>
+      <h3 data-i18n="footer_contact">Contact</h3>
+      <p data-i18n="footer_address">1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune, Toul Kork District, Phnom Penh City, Cambodia.</p>
+      <p>012 777 842 / 070 319 777 / 011 227 696 / 023 936 777</p>
+      <p>asiancam@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="container copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
+</footer>
+
+<script src="assets/js/lang.js"></script>
+</body>
+</html>

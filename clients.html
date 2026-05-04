@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clients | Asian Cam Advisory</title>
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/clients.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo-wrap">
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+
+    <nav class="menu" id="mainMenu">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About Us</a>
+      <a href="services.html" data-i18n="nav_services">Services</a>
+      <a href="clients.html" class="active" data-i18n="nav_clients">Clients</a>
+      <a href="staff.html" data-i18n="nav_team">Team</a>
+      <a href="certificates.html" data-i18n="nav_cert">Certificates</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    </nav>
+
+    <div class="langs">
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
+    </div>
+  </div>
+</header>
+
+<section class="clients-hero">
+  <div class="clients-hero-bg">
+    <img src="assets/img/pages/clients-hero.png" alt="Asian Cam Clients">
+  </div>
+
+  <div class="clients-hero-overlay"></div>
+  <div class="clients-hero-dots"></div>
+
+  <div class="container clients-hero-inner">
+    <div class="clients-hero-text">
+      <span data-i18n="clients_badge">OUR CLIENTS</span>
+
+      <h1 data-i18n="clients_title">
+        Growing Together. Achieving More.
+      </h1>
+
+      <p data-i18n="clients_desc">
+        We support trading, service, manufacturing and local businesses with trusted accounting, tax and advisory solutions.
+      </p>
+
+      <a href="#industries" class="hero-btn">
+        <span data-i18n="clients_btn">Explore Industries</span>
+        <b>›</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="industries">
+  <div class="container">
+
+    <div class="section-head">
+      <span data-i18n="industries_badge">WHAT WE DO</span>
+      <h2 data-i18n="industries_title">Industries We Serve</h2>
+    </div>
+
+    <div class="industry-icon-grid">
+
+      <div class="industry-small">
+        <div>👕</div>
+        <h3 data-i18n="industry_textile">Textile, Apparel, Footwear & Bags Enterprise</h3>
+      </div>
+
+      <div class="industry-small">
+        <div>🛍</div>
+        <h3 data-i18n="industry_shoes">Shoes Enterprise</h3>
+      </div>
+
+      <div class="industry-small">
+        <div>📣</div>
+        <h3 data-i18n="industry_bbq">BBQ Accessories Enterprise</h3>
+      </div>
+
+      <div class="industry-small">
+        <div>☀</div>
+        <h3 data-i18n="industry_solar">Solar Panel Enterprise</h3>
+      </div>
+
+      <div class="industry-small">
+        <div>🛋</div>
+        <h3 data-i18n="industry_furniture">Furniture Enterprise</h3>
+      </div>
+
+    </div>
+
+    <div class="industry-detail-grid">
+
+      <div class="industry-box">
+        <div class="industry-title">
+          <div class="industry-icon">🏢</div>
+          <h3 data-i18n="industry_trading">Trading Company</h3>
+        </div>
+
+        <div class="industry-list two-col">
+          <span data-i18n="trading_elevators">Elevators</span>
+          <span data-i18n="trading_construction_material">Construction Material</span>
+          <span data-i18n="trading_electric">Electric</span>
+          <span data-i18n="trading_glue">Glue</span>
+          <span data-i18n="trading_bathroom">Bathroom</span>
+          <span data-i18n="trading_chemical">Chemical</span>
+          <span data-i18n="trading_hotel_accessories">Hotel Accessories</span>
+          <span data-i18n="trading_machineries">Machineries</span>
+          <span data-i18n="trading_air_conditioner">Air-conditioner</span>
+          <span data-i18n="trading_packaging">Packaging Material</span>
+        </div>
+      </div>
+
+      <div class="industry-box">
+        <div class="industry-title">
+          <div class="industry-icon">👥</div>
+          <h3 data-i18n="industry_service">Local Service Company</h3>
+        </div>
+
+        <div class="industry-list two-col">
+          <span data-i18n="service_travel">Travel Agency</span>
+          <span data-i18n="service_garment">Garment Printing / Embroidery / Laundry</span>
+          <span data-i18n="service_clearance">Custom Clearance / Transportation</span>
+          <span data-i18n="service_construction">Construction</span>
+          <span data-i18n="service_hotel">Hotel</span>
+          <span data-i18n="service_massage">Massage & Spa</span>
+          <span data-i18n="service_consultant">Management Consultant</span>
+          <span data-i18n="service_quality">Quality Inspection</span>
+          <span data-i18n="service_real_estate">Real Estate</span>
+          <span data-i18n="service_restaurant">Restaurant</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="client-stats">
+  <div class="container">
+    <div class="client-stats-grid">
+
+      <div>
+        <strong>500+</strong>
+        <span data-i18n="stat_clients">Satisfied Clients</span>
+      </div>
+
+      <div>
+        <strong>20+</strong>
+        <span data-i18n="stat_industries">Industries Served</span>
+      </div>
+
+      <div>
+        <strong>10+</strong>
+        <span data-i18n="stat_experience">Years of Experience</span>
+      </div>
+
+      <div>
+        <strong>99%</strong>
+        <span data-i18n="stat_satisfaction">Client Satisfaction</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section commitment-section">
+  <div class="container">
+
+    <div class="section-head">
+      <span data-i18n="commitment_badge">OUR COMMITMENT</span>
+      <h2 data-i18n="commitment_title">Trusted by Businesses, Proven by Results</h2>
+    </div>
+
+    <div class="commitment-grid">
+
+      <div class="commitment-card">
+        <div>🤝</div>
+        <h3 data-i18n="commitment_1_title">Strong Partnerships</h3>
+        <p data-i18n="commitment_1_desc">
+          We build long-term relationships based on trust, transparency and mutual growth.
+        </p>
+      </div>
+
+      <div class="commitment-card">
+        <div>📈</div>
+        <h3 data-i18n="commitment_2_title">Business Growth</h3>
+        <p data-i18n="commitment_2_desc">
+          Our solutions help clients streamline operations and improve profitability.
+        </p>
+      </div>
+
+      <div class="commitment-card">
+        <div>🛡</div>
+        <h3 data-i18n="commitment_3_title">Reliable Compliance</h3>
+        <p data-i18n="commitment_3_desc">
+          We ensure your business stays compliant with the latest tax and regulatory requirements.
+        </p>
+      </div>
+
+      <div class="commitment-card">
+        <div>🎧</div>
+        <h3 data-i18n="commitment_4_title">Dedicated Support</h3>
+        <p data-i18n="commitment_4_desc">
+          Our experienced team is always ready to support your business at every step.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="client-cta">
+  <div class="container client-cta-inner">
+    <div>
+      <h2 data-i18n="cta_title">Ready to Grow Your Business?</h2>
+      <p data-i18n="cta_text">
+        Let Asian Cam be your trusted partner for sustainable success.
+      </p>
+    </div>
+
+    <a href="contact.html" class="btn white" data-i18n="cta_btn">Get in Touch</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <p data-i18n="footer_desc">
+        Professional accounting, tax and business advisory services in Cambodia.
+      </p>
+    </div>
+
+    <div>
+      <h3 data-i18n="footer_pages">Pages</h3>
+      <a href="about.html" data-i18n="footer_about">About</a>
+      <a href="services.html" data-i18n="footer_services">Services</a>
+      <a href="clients.html" data-i18n="footer_clients">Clients</a>
+      <a href="staff.html" data-i18n="footer_team">Team</a>
+      <a href="certificates.html" data-i18n="footer_cert">Certificates</a>
+    </div>
+
+    <div>
+      <h3 data-i18n="footer_contact">Contact</h3>
+      <p data-i18n="footer_address">
+        1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune, Toul Kork District, Phnom Penh City, Cambodia.
+      </p>
+      <p>012 777 842 / 070 319 777 / 011 227 696 / 023 936 777</p>
+      <p>asiancam@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="container copy" data-i18n="footer_copy">
+    © 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/client-lang.js"></script>
+</body>
+</html>
