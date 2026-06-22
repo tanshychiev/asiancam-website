@@ -5,22 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clients | Asian Cam Advisory</title>
 
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/clients.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/clients.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages" />
+
+  <style>
+    /* =========================================================
+       ASIANCAM SINGLE NAV UNDERLINE — ALL PUBLIC PAGES
+       One underline only for active, hover and keyboard focus.
+       ========================================================= */
+    .header .menu a,
+    .site-header .menu a {
+      position: relative !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #079bd9 14%,
+        #19bff3 50%,
+        #73ddff 86%,
+        transparent 100%
+      ) !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% calc(100% - 5px) !important;
+      background-size: 0 4px !important;
+
+      transition:
+        color 180ms ease,
+        background-size 230ms cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    /* Remove the two old pseudo-element underline systems */
+    .header .menu a::before,
+    .header .menu a::after,
+    .site-header .menu a::before,
+    .site-header .menu a::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .header .menu a:hover,
+    .header .menu a:focus-visible,
+    .header .menu a.active,
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible,
+    .site-header .menu a.active {
+      color: #079edc !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-size: 46px 4px !important;
+    }
+
+    .header .menu a:focus-visible,
+    .site-header .menu a:focus-visible {
+      outline: 2px solid rgba(19, 168, 242, 0.24) !important;
+      outline-offset: 4px !important;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .header .menu a,
+      .site-header .menu a {
+        background-position: 0 100% !important;
+      }
+
+      .header .menu a:hover,
+      .header .menu a:focus-visible,
+      .header .menu a.active,
+      .site-header .menu a:hover,
+      .site-header .menu a:focus-visible,
+      .site-header .menu a.active {
+        background-size: 34px 3px !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <a href="index.html" class="logo-wrap">
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    <a href="/" class="logo-wrap">
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+    <button type="button" class="menu-btn" onclick="toggleMenu()">MENU</button>
 
     <nav class="menu" id="mainMenu">
-      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="/" data-i18n="nav_home">Home</a>
       <a href="about.html" data-i18n="nav_about">About Us</a>
       <a href="services.html" data-i18n="nav_services">Services</a>
       <a href="clients.html" class="active" data-i18n="nav_clients">Clients</a>
@@ -32,14 +116,14 @@
     <div class="langs">
       <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
       <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
-      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">&#20013;&#25991;</button>
     </div>
   </div>
 </header>
 
 <section class="clients-hero">
   <div class="clients-hero-bg">
-    <img src="assets/img/pages/clients-hero.png" alt="Asian Cam Clients">
+    <img src="/assets/img/pages/clients-hero.png" alt="Asian Cam Clients">
   </div>
 
   <div class="clients-hero-overlay"></div>
@@ -48,18 +132,14 @@
   <div class="container clients-hero-inner">
     <div class="clients-hero-text">
       <span data-i18n="clients_badge">OUR CLIENTS</span>
-
-      <h1 data-i18n="clients_title">
-        Growing Together. Achieving More.
-      </h1>
-
+      <h1 data-i18n="clients_title">Growing Together. Achieving More.</h1>
       <p data-i18n="clients_desc">
         We support trading, service, manufacturing and local businesses with trusted accounting, tax and advisory solutions.
       </p>
 
       <a href="#industries" class="hero-btn">
         <span data-i18n="clients_btn">Explore Industries</span>
-        <b>›</b>
+        <b>&#8594;</b>
       </a>
     </div>
   </div>
@@ -67,46 +147,38 @@
 
 <section class="section" id="industries">
   <div class="container">
-
     <div class="section-head">
       <span data-i18n="industries_badge">WHAT WE DO</span>
       <h2 data-i18n="industries_title">Industries We Serve</h2>
     </div>
 
     <div class="industry-icon-grid">
-
       <div class="industry-small">
-        <div>👕</div>
-        <h3 data-i18n="industry_textile">Textile, Apparel, Footwear & Bags Enterprise</h3>
+        <div>&#128085;</div>
+        <h3 data-i18n="industry_textile">Textile, Apparel, Footwear &amp; Bags Enterprise</h3>
       </div>
-
       <div class="industry-small">
-        <div>🛍</div>
+        <div>&#128717;</div>
         <h3 data-i18n="industry_shoes">Shoes Enterprise</h3>
       </div>
-
       <div class="industry-small">
-        <div>📣</div>
+        <div>&#128226;</div>
         <h3 data-i18n="industry_bbq">BBQ Accessories Enterprise</h3>
       </div>
-
       <div class="industry-small">
-        <div>☀</div>
+        <div>&#9728;</div>
         <h3 data-i18n="industry_solar">Solar Panel Enterprise</h3>
       </div>
-
       <div class="industry-small">
-        <div>🛋</div>
+        <div>&#128715;</div>
         <h3 data-i18n="industry_furniture">Furniture Enterprise</h3>
       </div>
-
     </div>
 
     <div class="industry-detail-grid">
-
       <div class="industry-box">
         <div class="industry-title">
-          <div class="industry-icon">🏢</div>
+          <div class="industry-icon">&#127970;</div>
           <h3 data-i18n="industry_trading">Trading Company</h3>
         </div>
 
@@ -126,7 +198,7 @@
 
       <div class="industry-box">
         <div class="industry-title">
-          <div class="industry-icon">👥</div>
+          <div class="industry-icon">&#128101;</div>
           <h3 data-i18n="industry_service">Local Service Company</h3>
         </div>
 
@@ -136,91 +208,60 @@
           <span data-i18n="service_clearance">Custom Clearance / Transportation</span>
           <span data-i18n="service_construction">Construction</span>
           <span data-i18n="service_hotel">Hotel</span>
-          <span data-i18n="service_massage">Massage & Spa</span>
+          <span data-i18n="service_massage">Massage &amp; Spa</span>
           <span data-i18n="service_consultant">Management Consultant</span>
           <span data-i18n="service_quality">Quality Inspection</span>
           <span data-i18n="service_real_estate">Real Estate</span>
           <span data-i18n="service_restaurant">Restaurant</span>
         </div>
       </div>
-
     </div>
-
   </div>
 </section>
 
 <section class="client-stats">
   <div class="container">
     <div class="client-stats-grid">
-
-      <div>
-        <strong>500+</strong>
-        <span data-i18n="stat_clients">Satisfied Clients</span>
-      </div>
-
-      <div>
-        <strong>20+</strong>
-        <span data-i18n="stat_industries">Industries Served</span>
-      </div>
-
-      <div>
-        <strong>10+</strong>
-        <span data-i18n="stat_experience">Years of Experience</span>
-      </div>
-
-      <div>
-        <strong>99%</strong>
-        <span data-i18n="stat_satisfaction">Client Satisfaction</span>
-      </div>
-
+      <div><strong>500+</strong><span data-i18n="stat_clients">Satisfied Clients</span></div>
+      <div><strong>20+</strong><span data-i18n="stat_industries">Industries Served</span></div>
+      <div><strong>10+</strong><span data-i18n="stat_experience">Years of Experience</span></div>
+      <div><strong>99%</strong><span data-i18n="stat_satisfaction">Client Satisfaction</span></div>
     </div>
   </div>
 </section>
 
 <section class="section commitment-section">
   <div class="container">
-
     <div class="section-head">
       <span data-i18n="commitment_badge">OUR COMMITMENT</span>
       <h2 data-i18n="commitment_title">Trusted by Businesses, Proven by Results</h2>
     </div>
 
     <div class="commitment-grid">
-
       <div class="commitment-card">
-        <div>🤝</div>
+        <div>01</div>
         <h3 data-i18n="commitment_1_title">Strong Partnerships</h3>
-        <p data-i18n="commitment_1_desc">
-          We build long-term relationships based on trust, transparency and mutual growth.
-        </p>
+        <p data-i18n="commitment_1_desc">We build long-term relationships based on trust, transparency and mutual growth.</p>
       </div>
 
       <div class="commitment-card">
-        <div>📈</div>
+        <div>02</div>
         <h3 data-i18n="commitment_2_title">Business Growth</h3>
-        <p data-i18n="commitment_2_desc">
-          Our solutions help clients streamline operations and improve profitability.
-        </p>
+        <p data-i18n="commitment_2_desc">Our solutions help clients streamline operations and improve profitability.</p>
       </div>
 
       <div class="commitment-card">
-        <div>🛡</div>
+        <div>03</div>
         <h3 data-i18n="commitment_3_title">Reliable Compliance</h3>
-        <p data-i18n="commitment_3_desc">
-          We ensure your business stays compliant with the latest tax and regulatory requirements.
-        </p>
+        <p data-i18n="commitment_3_desc">We ensure your business stays compliant with the latest tax and regulatory requirements.</p>
       </div>
 
       <div class="commitment-card">
-        <div>🎧</div>
+        <div>04</div>
         <h3 data-i18n="commitment_4_title">Dedicated Support</h3>
-        <p data-i18n="commitment_4_desc">
-          Our experienced team is always ready to support your business at every step.
-        </p>
+        <p data-i18n="commitment_4_desc">Our experienced team is always ready to support your business at every step.</p>
       </div>
-
     </div>
-
   </div>
 </section>
 
@@ -228,11 +269,8 @@
   <div class="container client-cta-inner">
     <div>
       <h2 data-i18n="cta_title">Ready to Grow Your Business?</h2>
-      <p data-i18n="cta_text">
-        Let Asian Cam be your trusted partner for sustainable success.
-      </p>
+      <p data-i18n="cta_text">Let Asian Cam be your trusted partner for sustainable success.</p>
     </div>
-
     <a href="contact.html" class="btn white" data-i18n="cta_btn">Get in Touch</a>
   </div>
 </section>
@@ -240,10 +278,8 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
-      <p data-i18n="footer_desc">
-        Professional accounting, tax and business advisory services in Cambodia.
-      </p>
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
+      <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
     </div>
 
     <div>
@@ -258,7 +294,8 @@
     <div>
       <h3 data-i18n="footer_contact">Contact</h3>
       <p data-i18n="footer_address">
-        1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune, Toul Kork District, Phnom Penh City, Cambodia.
+        1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune,
+        Toul Kork District, Phnom Penh City, Cambodia.
       </p>
       <p>012 777 842 / 070 319 777 / 011 227 696 / 023 936 777</p>
       <p>asiancam@gmail.com</p>
@@ -266,11 +303,10 @@
   </div>
 
   <div class="container copy" data-i18n="footer_copy">
-    © 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.
+    &copy; 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.
   </div>
 </footer>
 
-<script src="assets/js/lang.js"></script>
-<script src="assets/js/client-lang.js"></script>
+<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
 </body>
 </html>

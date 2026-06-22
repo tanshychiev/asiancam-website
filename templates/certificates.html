@@ -5,22 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certificates | Asian Cam Advisory</title>
 
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/certificates.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/certificates.css" />
+<link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages">
+
+  <style>
+    /* =========================================================
+       ASIANCAM SINGLE NAV UNDERLINE — ALL PUBLIC PAGES
+       One underline only for active, hover and keyboard focus.
+       ========================================================= */
+    .header .menu a,
+    .site-header .menu a {
+      position: relative !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #079bd9 14%,
+        #19bff3 50%,
+        #73ddff 86%,
+        transparent 100%
+      ) !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% calc(100% - 5px) !important;
+      background-size: 0 4px !important;
+
+      transition:
+        color 180ms ease,
+        background-size 230ms cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    /* Remove the two old pseudo-element underline systems */
+    .header .menu a::before,
+    .header .menu a::after,
+    .site-header .menu a::before,
+    .site-header .menu a::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .header .menu a:hover,
+    .header .menu a:focus-visible,
+    .header .menu a.active,
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible,
+    .site-header .menu a.active {
+      color: #079edc !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-size: 46px 4px !important;
+    }
+
+    .header .menu a:focus-visible,
+    .site-header .menu a:focus-visible {
+      outline: 2px solid rgba(19, 168, 242, 0.24) !important;
+      outline-offset: 4px !important;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .header .menu a,
+      .site-header .menu a {
+        background-position: 0 100% !important;
+      }
+
+      .header .menu a:hover,
+      .header .menu a:focus-visible,
+      .header .menu a.active,
+      .site-header .menu a:hover,
+      .site-header .menu a:focus-visible,
+      .site-header .menu a.active {
+        background-size: 34px 3px !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <a href="index.html" class="logo-wrap">
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    <a href="/" class="logo-wrap">
+      <img src="/assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
     </a>
 
     <button class="menu-btn" onclick="toggleMenu()">MENU</button>
 
     <nav class="menu" id="mainMenu">
-      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="/" data-i18n="nav_home">Home</a>
       <a href="about.html" data-i18n="nav_about">About Us</a>
       <a href="services.html" data-i18n="nav_services">Services</a>
       <a href="clients.html" data-i18n="nav_clients">Clients</a>
@@ -32,14 +115,14 @@
     <div class="langs">
       <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
       <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
-      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">&#20013;&#25991;</button>
     </div>
   </div>
 </header>
 
 <section class="cert-hero">
   <div class="cert-hero-bg">
-    <img src="assets/img/pages/certificates-hero.jpg" alt="Certificates">
+    <img src="/assets/img/pages/certificates-hero.jpg" alt="Certificates">
   </div>
   <div class="cert-hero-overlay"></div>
   <div class="cert-hero-dots"></div>
@@ -53,7 +136,7 @@
       </p>
       <a href="#certificatesList" class="hero-btn">
         <span data-i18n="cert_hero_btn">View Certificates</span>
-        <b>›</b>
+        <b>&#8594;</b>
       </a>
     </div>
   </div>
@@ -76,16 +159,16 @@
       </div>
 
       <div class="cert-grid three">
-        <div class="cert-card" data-preview="assets/img/certificates/business-1.jpg">
-          <img src="assets/img/certificates/business-1.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/business-1.jpg">
+          <img src="/assets/img/certificates/business-1.jpg" alt="">
           <h4 data-i18n="cert_1">Business Registration Certificate I</h4>
         </div>
-        <div class="cert-card" data-preview="assets/img/certificates/business-2.jpg">
-          <img src="assets/img/certificates/business-2.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/business-2.jpg">
+          <img src="/assets/img/certificates/business-2.jpg" alt="">
           <h4 data-i18n="cert_2">Business Registration Certificate II</h4>
         </div>
-        <div class="cert-card" data-preview="assets/img/certificates/business-3.jpg">
-          <img src="assets/img/certificates/business-3.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/business-3.jpg">
+          <img src="/assets/img/certificates/business-3.jpg" alt="">
           <h4 data-i18n="cert_3">Business Registration Certificate III</h4>
         </div>
       </div>
@@ -99,16 +182,16 @@
       </div>
 
       <div class="cert-grid three">
-        <div class="cert-card" data-preview="assets/img/certificates/vat-1.jpg">
-          <img src="assets/img/certificates/vat-1.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/vat-1.jpg">
+          <img src="/assets/img/certificates/vat-1.jpg" alt="">
           <h4 data-i18n="cert_4">Tax Registration Certificate (VAT)</h4>
         </div>
-        <div class="cert-card" data-preview="assets/img/certificates/gdt-notification.jpg">
-          <img src="assets/img/certificates/gdt-notification.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/gdt-notification.jpg">
+          <img src="/assets/img/certificates/gdt-notification.jpg" alt="">
           <h4 data-i18n="cert_5">Notification of the GDT on Tax Registration</h4>
         </div>
-        <div class="cert-card" data-preview="assets/img/certificates/patent-2024.jpg">
-          <img src="assets/img/certificates/patent-2024.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/patent-2024.jpg">
+          <img src="/assets/img/certificates/patent-2024.jpg" alt="">
           <h4 data-i18n="cert_6">Patent Tax Year 2024</h4>
         </div>
       </div>
@@ -122,12 +205,12 @@
       </div>
 
       <div class="cert-grid two">
-        <div class="cert-card" data-preview="assets/img/certificates/patent-2025.jpg">
-          <img src="assets/img/certificates/patent-2025.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/patent-2025.jpg">
+          <img src="/assets/img/certificates/patent-2025.jpg" alt="">
           <h4 data-i18n="cert_7">Patent Tax Year 2025</h4>
         </div>
-        <div class="cert-card" data-preview="assets/img/certificates/vat-2.jpg">
-          <img src="assets/img/certificates/vat-2.jpg" alt="">
+        <div class="cert-card" data-preview="/assets/img/certificates/vat-2.jpg">
+          <img src="/assets/img/certificates/vat-2.jpg" alt="">
           <h4 data-i18n="cert_8">Tax Registration Certificate (VAT)</h4>
         </div>
       </div>
@@ -141,12 +224,12 @@
       </div>
 
       <div class="cert-grid six">
-        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-1.jpg"><img src="assets/img/certificates/tax-agent-1.jpg" alt=""><h4 data-i18n="cert_9">Tax Agent License I</h4></div>
-        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-2.jpg"><img src="assets/img/certificates/tax-agent-2.jpg" alt=""><h4 data-i18n="cert_10">Tax Agent License II</h4></div>
-        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-3.jpg"><img src="assets/img/certificates/tax-agent-3.jpg" alt=""><h4 data-i18n="cert_11">Tax Agent License III</h4></div>
-        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-4.jpg"><img src="assets/img/certificates/tax-agent-4.jpg" alt=""><h4 data-i18n="cert_12">Tax Agent License IV</h4></div>
-        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-5.jpg"><img src="assets/img/certificates/tax-agent-5.jpg" alt=""><h4 data-i18n="cert_13">Tax Agent License V</h4></div>
-        <div class="cert-card" data-preview="assets/img/certificates/tax-agent-6.jpg"><img src="assets/img/certificates/tax-agent-6.jpg" alt=""><h4 data-i18n="cert_14">Tax Agent License VI</h4></div>
+        <div class="cert-card" data-preview="/assets/img/certificates/tax-agent-1.jpg"><img src="/assets/img/certificates/tax-agent-1.jpg" alt=""><h4 data-i18n="cert_9">Tax Agent License I</h4></div>
+        <div class="cert-card" data-preview="/assets/img/certificates/tax-agent-2.jpg"><img src="/assets/img/certificates/tax-agent-2.jpg" alt=""><h4 data-i18n="cert_10">Tax Agent License II</h4></div>
+        <div class="cert-card" data-preview="/assets/img/certificates/tax-agent-3.jpg"><img src="/assets/img/certificates/tax-agent-3.jpg" alt=""><h4 data-i18n="cert_11">Tax Agent License III</h4></div>
+        <div class="cert-card" data-preview="/assets/img/certificates/tax-agent-4.jpg"><img src="/assets/img/certificates/tax-agent-4.jpg" alt=""><h4 data-i18n="cert_12">Tax Agent License IV</h4></div>
+        <div class="cert-card" data-preview="/assets/img/certificates/tax-agent-5.jpg"><img src="/assets/img/certificates/tax-agent-5.jpg" alt=""><h4 data-i18n="cert_13">Tax Agent License V</h4></div>
+        <div class="cert-card" data-preview="/assets/img/certificates/tax-agent-6.jpg"><img src="/assets/img/certificates/tax-agent-6.jpg" alt=""><h4 data-i18n="cert_14">Tax Agent License VI</h4></div>
       </div>
     </div>
 
@@ -158,12 +241,12 @@
       </div>
 
       <div class="cert-grid two">
-        <div class="cert-card wide" data-preview="assets/img/certificates/kicpaa-1.jpg">
-          <img src="assets/img/certificates/kicpaa-1.jpg" alt="">
+        <div class="cert-card wide" data-preview="/assets/img/certificates/kicpaa-1.jpg">
+          <img src="/assets/img/certificates/kicpaa-1.jpg" alt="">
           <h4 data-i18n="cert_15">KICPAA Affiliate Member - Company</h4>
         </div>
-        <div class="cert-card wide" data-preview="assets/img/certificates/kicpaa-2.jpg">
-          <img src="assets/img/certificates/kicpaa-2.jpg" alt="">
+        <div class="cert-card wide" data-preview="/assets/img/certificates/kicpaa-2.jpg">
+          <img src="/assets/img/certificates/kicpaa-2.jpg" alt="">
           <h4 data-i18n="cert_16">KICPAA Affiliate Member - Individual</h4>
         </div>
       </div>
@@ -177,12 +260,12 @@
       </div>
 
       <div class="cert-grid two">
-        <div class="cert-card wide" data-preview="assets/img/certificates/acar-1.jpg">
-          <img src="assets/img/certificates/acar-1.jpg" alt="">
+        <div class="cert-card wide" data-preview="/assets/img/certificates/acar-1.jpg">
+          <img src="/assets/img/certificates/acar-1.jpg" alt="">
           <h4 data-i18n="cert_17">ACAR Accounting Level II Practice License I</h4>
         </div>
-        <div class="cert-card wide" data-preview="assets/img/certificates/acar-2.jpg">
-          <img src="assets/img/certificates/acar-2.jpg" alt="">
+        <div class="cert-card wide" data-preview="/assets/img/certificates/acar-2.jpg">
+          <img src="/assets/img/certificates/acar-2.jpg" alt="">
           <h4 data-i18n="cert_18">ACAR Accounting Level II Practice License II</h4>
         </div>
       </div>
@@ -229,7 +312,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <img src="/assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
       <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
     </div>
 
@@ -250,14 +333,14 @@
     </div>
   </div>
 
-  <div class="container copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD.</div>
+  <div class="container copy" data-i18n="footer_copy">&copy; 2026 ASIAN CAM ADVISORY CO., LTD.</div>
 </footer>
 
 <div class="cert-modal" id="certModal">
-  <button class="cert-modal-close" type="button">×</button>
+  <button class="cert-modal-close" type="button">&#215;</button>
 
   <div class="cert-modal-toolbar">
-    <button type="button" id="zoomOutBtn">−</button>
+    <button type="button" id="zoomOutBtn">&#8722;</button>
     <button type="button" id="zoomResetBtn">Reset</button>
     <button type="button" id="zoomInBtn">+</button>
   </div>
@@ -266,9 +349,9 @@
     <img id="certModalImg" src="" alt="Certificate Preview">
   </div>
 </div>
-
-<script src="assets/js/lang.js"></script>
-<script src="assets/js/certificates-lang.js"></script>
-<script src="assets/js/certificates-gallery.js"></script>
+<script src="/assets/js/certificates-gallery.js"></script>
+<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
+<script src="/assets/js/certificates-lang.js"></script>
+<script src="/assets/js/certificates-gallery.js"></script>
 </body>
 </html>

@@ -1,191 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News Dashboard | Asian Cam</title>
 
+  <link
+    rel="stylesheet"
+    href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages"
+  />
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f8fb;
       color: #0b2b4c;
+      background:
+        radial-gradient(circle at top left, rgba(19, 168, 242, 0.12), transparent 30%),
+        #eef6fb;
     }
 
-    .wrap {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
+    .dashboard-wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 30px auto;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 12px 35px rgba(0, 80, 150, 0.12);
-      padding: 28px;
-    }
-
-    .head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 25px;
-      border-bottom: 1px solid #e5eef6;
-      padding-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      color: #073b73;
-    }
-
-    p {
-      color: #5f7590;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #13a8f2;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 8px;
-      border: none;
-    }
-
-    .btn-light {
-      background: #eef8ff;
-      color: #0877bd;
-    }
-
-    .btn-danger {
-      background: #ffecec;
-      color: #c62828;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .dashboard-card {
       overflow: hidden;
+      background: #ffffff;
+      border: 1px solid #dcedf8;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(0, 72, 130, 0.12);
+    }
+
+    .dashboard-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px 30px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #073b73, #0b7fc6 58%, #13a8f2);
+    }
+
+    .dashboard-topbar h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .dashboard-topbar p {
+      margin: 7px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .dashboard-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dashboard-btn {
+      display: inline-flex;
+      min-height: 42px;
+      padding: 10px 17px;
+      align-items: center;
+      justify-content: center;
+      color: #0877bd;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      background: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      border-radius: 999px;
+      cursor: pointer;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        filter 180ms ease;
+    }
+
+    .dashboard-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 55, 105, 0.22);
+      filter: brightness(1.03);
+    }
+
+    .dashboard-content {
+      padding: 28px 30px 34px;
+    }
+
+    .message {
+      margin-bottom: 18px;
+      padding: 13px 16px;
+      color: #075c91;
+      font-weight: 700;
+      background: #eaf8ff;
+      border: 1px solid #c8ecff;
       border-radius: 14px;
     }
 
-    th, td {
-      padding: 14px;
-      border-bottom: 1px solid #e5eef6;
-      text-align: left;
-      vertical-align: middle;
+    .news-table-wrap {
+      overflow-x: auto;
+      border: 1px solid #dcedf8;
+      border-radius: 18px;
     }
 
-    th {
-      background: #f2f9ff;
+    .news-table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+    }
+
+    .news-table th,
+    .news-table td {
+      padding: 15px 16px;
+      text-align: left;
+      vertical-align: middle;
+      border-bottom: 1px solid #e5f0f7;
+    }
+
+    .news-table th {
+      color: #0a578d;
+      font-size: 13px;
+      letter-spacing: 0.35px;
+      background: #f2f9fd;
+    }
+
+    .news-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .news-table tbody tr {
+      transition:
+        background 160ms ease,
+        transform 160ms ease;
+    }
+
+    .news-table tbody tr:hover {
+      background: #f7fcff;
+    }
+
+    .news-thumb {
+      width: 76px;
+      height: 54px;
+      object-fit: cover;
+      background: #dff3ff;
+      border-radius: 10px;
+    }
+
+    .news-title {
+      max-width: 340px;
       color: #073b73;
+      font-weight: 800;
     }
 
     .status {
-      font-weight: bold;
+      display: inline-flex;
+      padding: 7px 11px;
+      align-items: center;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .published {
-      color: #16863a;
+    .status.live {
+      color: #087b4b;
+      background: #e6f8ef;
     }
 
-    .draft {
-      color: #c77700;
+    .status.draft {
+      color: #8b6200;
+      background: #fff5d8;
     }
 
-    .msg {
-      background: #e9fff2;
-      color: #137a3b;
-      border: 1px solid #b9efcc;
-      padding: 12px;
-      border-radius: 12px;
-      margin-bottom: 18px;
+    .row-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    @media (max-width: 800px) {
-      .head {
-        flex-direction: column;
+    .row-btn {
+      display: inline-flex;
+      padding: 8px 12px;
+      align-items: center;
+      justify-content: center;
+      color: #0877bd;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      background: #eaf8ff;
+      border: 1px solid #c9ebff;
+      border-radius: 999px;
+      cursor: pointer;
+      transition:
+        transform 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+    .row-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 112, 200, 0.15);
+    }
+
+    .row-btn.danger {
+      color: #b3261e;
+      background: #fff0ef;
+      border-color: #ffd5d1;
+    }
+
+    .empty {
+      padding: 50px 20px;
+      color: #607b91;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .dashboard-topbar {
         align-items: flex-start;
+        flex-direction: column;
       }
 
-      table {
-        font-size: 13px;
-      }
-
-      th, td {
-        padding: 10px;
-      }
-
-      .btn {
-        margin: 3px 0;
+      .dashboard-content {
+        padding: 20px;
       }
     }
   </style>
 </head>
+
 <body>
+  <div class="dashboard-wrap">
+    <div class="dashboard-card">
+      <header class="dashboard-topbar">
+        <div>
+          <h1>Company News</h1>
+          <p>Manage homepage announcements, photos, video, publishing and display order.</p>
+        </div>
 
-<div class="wrap">
-  <div class="card">
+        <div class="dashboard-actions">
+          {% url 'dashboard_news_add' as add_url %}
+          {% if not add_url %}
+            {% url 'dashboard_news_create' as add_url %}
+          {% endif %}
 
-    <div class="head">
-      <div>
-        <h1>News Dashboard</h1>
-        <p>Manage company news, photo, video, and language content.</p>
-      </div>
+          {% if add_url %}
+            <a href="{{ add_url }}" class="dashboard-btn">+ Add News</a>
+          {% endif %}
 
-      <div>
-        <a href="/" class="btn btn-light">View Website</a>
-        <a href="{% url 'dashboard_news_add' %}" class="btn">+ Add News</a>
-      </div>
+          <a href="/" class="dashboard-btn">View Website</a>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="message">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <div class="news-table-wrap">
+          <table class="news-table">
+            <thead>
+              <tr>
+                <th>Media</th>
+                <th>English Title</th>
+                <th>Status</th>
+                <th>Order</th>
+                <th>Created</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for news in news_list|default:news_items %}
+                <tr>
+                  <td>
+                    {% if news.image %}
+                      <img src="{{ news.image.url }}" class="news-thumb" alt="">
+                    {% else %}
+                      <div class="news-thumb"></div>
+                    {% endif %}
+                  </td>
+
+                  <td class="news-title">{{ news.title_en }}</td>
+
+                  <td>
+                    {% if news.is_published %}
+                      <span class="status live">Published</span>
+                    {% else %}
+                      <span class="status draft">Draft</span>
+                    {% endif %}
+                  </td>
+
+                  <td>{{ news.sort_order }}</td>
+                  <td>{{ news.created_at|date:"d M Y" }}</td>
+
+                  <td>
+                    <div class="row-actions">
+                      {% url 'news_detail' news.id as detail_url %}
+                      {% url 'dashboard_news_edit' news.id as edit_url %}
+                      {% if not edit_url %}
+                        {% url 'dashboard_news_update' news.id as edit_url %}
+                      {% endif %}
+                      {% url 'dashboard_news_delete' news.id as delete_url %}
+
+                      {% if detail_url %}
+                        <a href="{{ detail_url }}" class="row-btn">View</a>
+                      {% endif %}
+
+                      {% if edit_url %}
+                        <a href="{{ edit_url }}" class="row-btn">Edit</a>
+                      {% endif %}
+
+                      {% if delete_url %}
+                        <form method="post" action="{{ delete_url }}">
+                          {% csrf_token %}
+                          <button
+                            type="submit"
+                            class="row-btn danger"
+                            onclick="return confirm('Delete this news?');"
+                          >
+                            Delete
+                          </button>
+                        </form>
+                      {% endif %}
+                    </div>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="6" class="empty">
+                    No news has been added yet.
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </main>
     </div>
-
-    {% if messages %}
-      {% for message in messages %}
-        <div class="msg">{{ message }}</div>
-      {% endfor %}
-    {% endif %}
-
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Date</th>
-          <th>Status</th>
-          <th style="width: 220px;">Action</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {% for news in news_list %}
-        <tr>
-          <td>{{ news.title_en }}</td>
-          <td>{{ news.created_at|date:"d M Y" }}</td>
-          <td>
-            {% if news.is_published %}
-              <span class="status published">Published</span>
-            {% else %}
-              <span class="status draft">Draft</span>
-            {% endif %}
-          </td>
-          <td>
-            <a href="{% url 'dashboard_news_edit' news.id %}" class="btn btn-light">Edit</a>
-            <a href="{% url 'dashboard_news_delete' news.id %}" class="btn btn-danger">Delete</a>
-          </td>
-        </tr>
-        {% empty %}
-        <tr>
-          <td colspan="4">No news uploaded yet.</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-
   </div>
-</div>
-
 </body>
 </html>

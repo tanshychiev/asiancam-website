@@ -5,22 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Asian Cam Advisory</title>
 
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/about.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/about.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages" />
+
+  <style>
+    /* =========================================================
+       ASIANCAM SINGLE NAV UNDERLINE — ALL PUBLIC PAGES
+       One underline only for active, hover and keyboard focus.
+       ========================================================= */
+    .header .menu a,
+    .site-header .menu a {
+      position: relative !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #079bd9 14%,
+        #19bff3 50%,
+        #73ddff 86%,
+        transparent 100%
+      ) !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% calc(100% - 5px) !important;
+      background-size: 0 4px !important;
+
+      transition:
+        color 180ms ease,
+        background-size 230ms cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    /* Remove the two old pseudo-element underline systems */
+    .header .menu a::before,
+    .header .menu a::after,
+    .site-header .menu a::before,
+    .site-header .menu a::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .header .menu a:hover,
+    .header .menu a:focus-visible,
+    .header .menu a.active,
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible,
+    .site-header .menu a.active {
+      color: #079edc !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-size: 46px 4px !important;
+    }
+
+    .header .menu a:focus-visible,
+    .site-header .menu a:focus-visible {
+      outline: 2px solid rgba(19, 168, 242, 0.24) !important;
+      outline-offset: 4px !important;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .header .menu a,
+      .site-header .menu a {
+        background-position: 0 100% !important;
+      }
+
+      .header .menu a:hover,
+      .header .menu a:focus-visible,
+      .header .menu a.active,
+      .site-header .menu a:hover,
+      .site-header .menu a:focus-visible,
+      .site-header .menu a.active {
+        background-size: 34px 3px !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <a href="index.html" class="logo-wrap">
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    <a href="/" class="logo-wrap">
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+    <button type="button" class="menu-btn" onclick="toggleMenu()">MENU</button>
 
     <nav class="menu" id="mainMenu">
-      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="/" data-i18n="nav_home">Home</a>
       <a href="about.html" class="active" data-i18n="nav_about">About Us</a>
       <a href="services.html" data-i18n="nav_services">Services</a>
       <a href="clients.html" data-i18n="nav_clients">Clients</a>
@@ -32,14 +116,14 @@
     <div class="langs">
       <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
       <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
-      <button type="button" data-lang="cn" onclick="setLang('cn')">中文</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">&#20013;&#25991;</button>
     </div>
   </div>
 </header>
 
 <section class="about-hero-home">
   <div class="about-hero-bg">
-    <img src="assets/img/pages/about-building.png" alt="Asian Cam Building">
+    <img src="/assets/img/pages/about-building.png" alt="Asian Cam Building">
   </div>
 
   <div class="about-hero-overlay"></div>
@@ -48,7 +132,6 @@
   <div class="container about-hero-inner">
     <div class="about-hero-text">
       <span class="hero-label" data-i18n="about_label">ABOUT US</span>
-
       <h1 data-i18n="about_title">About Our Company</h1>
 
       <p data-i18n="about_text">
@@ -59,7 +142,7 @@
 
       <a href="#our-story" class="hero-btn">
         <span data-i18n="about_btn">Explore Our Company</span>
-        <b>›</b>
+        <b>&#8594;</b>
       </a>
 
       <div class="hero-points">
@@ -83,26 +166,26 @@
 <section class="service-strip">
   <div class="container service-box">
     <div class="service-item">
-      <div class="service-icon">▦</div>
+      <div class="service-icon">AC</div>
       <h3 data-i18n="mini1">Accounting Support</h3>
       <p data-i18n="mini1p">Organized records and clear financial reporting.</p>
     </div>
 
     <div class="service-item">
-      <div class="service-icon">▤</div>
+      <div class="service-icon">TX</div>
       <h3 data-i18n="mini2">Tax Compliance</h3>
       <p data-i18n="mini2p">Helping businesses meet tax duties correctly.</p>
     </div>
 
     <div class="service-item">
-      <div class="service-icon">♙</div>
+      <div class="service-icon">AD</div>
       <h3 data-i18n="mini3">Business Advisory</h3>
       <p data-i18n="mini3p">Practical guidance for stable business growth.</p>
     </div>
 
     <div class="service-item">
-      <div class="service-icon">♟</div>
-      <h3 data-i18n="mini4">Payroll & HR</h3>
+      <div class="service-icon">HR</div>
+      <h3 data-i18n="mini4">Payroll &amp; HR</h3>
       <p data-i18n="mini4p">Payroll and staff administration support.</p>
     </div>
   </div>
@@ -144,7 +227,7 @@
 <section class="office-section section soft">
   <div class="container office-grid">
     <div class="image-card">
-      <img src="assets/img/pages/about-office.png" alt="Asian Cam Office">
+      <img src="/assets/img/pages/about-office.png" alt="Asian Cam Office">
     </div>
 
     <div class="office-text">
@@ -175,7 +258,7 @@
     </div>
 
     <div class="image-card">
-      <img src="assets/img/pages/phnom-penh-skyline.png" alt="Phnom Penh Skyline">
+      <img src="/assets/img/pages/phnom-penh-skyline.png" alt="Phnom Penh Skyline">
     </div>
   </div>
 </section>
@@ -189,25 +272,22 @@
 
     <div class="values-grid">
       <div class="value-card">
-        <div class="value-icon">♢</div>
+        <div class="value-icon">01</div>
         <h3 data-i18n="value_1_title">Integrity</h3>
         <p data-i18n="value_1_desc">We work with honesty, confidentiality and responsibility.</p>
       </div>
-
       <div class="value-card">
-        <div class="value-icon">◯</div>
+        <div class="value-icon">02</div>
         <h3 data-i18n="value_2_title">Clarity</h3>
         <p data-i18n="value_2_desc">We make accounting and tax matters easier to understand.</p>
       </div>
-
       <div class="value-card">
-        <div class="value-icon">✦</div>
+        <div class="value-icon">03</div>
         <h3 data-i18n="value_3_title">Commitment</h3>
         <p data-i18n="value_3_desc">We support clients with care and consistency.</p>
       </div>
-
       <div class="value-card">
-        <div class="value-icon">♡</div>
+        <div class="value-icon">04</div>
         <h3 data-i18n="value_4_title">Growth</h3>
         <p data-i18n="value_4_desc">We help businesses build stronger financial foundations.</p>
       </div>
@@ -228,7 +308,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
       <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
     </div>
 
@@ -249,9 +329,9 @@
     </div>
   </div>
 
-  <div class="container copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD.</div>
+  <div class="container copy" data-i18n="footer_copy">&copy; 2026 ASIAN CAM ADVISORY CO., LTD.</div>
 </footer>
 
-<script src="assets/js/lang.js"></script>
+<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
 </body>
 </html>

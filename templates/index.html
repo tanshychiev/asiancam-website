@@ -1,29 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asian Cam Advisory</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <link rel="stylesheet" href="/assets/css/base.css?v=20260622-index-v2" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260622-index-v2" />
+  <link rel="stylesheet" href="/assets/css/responsive.css?v=20260622-index-v2" />
+  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages" />
 
   <style>
+    /* Keep the homepage header identical to the other public pages */
+    .header {
+      position: relative;
+      z-index: 1000;
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .header .nav {
+      min-height: 84px;
+    }
+
+    .header .logo-wrap,
+    .header .logo-img {
+      flex-shrink: 0;
+    }
+
+    .header .menu {
+      white-space: nowrap;
+    }
+
+    .header .langs {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 8px;
+    }
+
+    .header .langs button {
+      display: inline-flex;
+      min-width: 42px;
+      height: 42px;
+      padding: 0 11px;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .header .langs button[data-lang="cn"] {
+      min-width: 54px;
+    }
+
+    /* Prevent style.css from making homepage text look smaller */
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
+
+    .hero-text > span {
+      font-size: 15px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(44px, 4.3vw, 72px);
+      line-height: 1.08;
+    }
+
+    .hero-text > p {
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .hero-points strong {
+      font-size: 15px;
+    }
+
+    .hero-points small {
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
     .news-section {
       padding: 90px 0;
       background: linear-gradient(180deg, #f5fbff 0%, #ffffff 100%);
     }
 
     .news-head {
-      text-align: center;
       max-width: 720px;
       margin: 0 auto 40px;
+      text-align: center;
     }
 
     .news-head span {
       display: inline-block;
+      margin-bottom: 10px;
       color: #13a8f2;
       font-weight: 800;
       letter-spacing: 1px;
-      margin-bottom: 10px;
     }
 
     .news-head h2 {
@@ -34,6 +113,7 @@
     }
 
     .news-head p {
+      margin: 14px 0 0;
       color: #5f7590;
       font-size: 16px;
       line-height: 1.7;
@@ -47,14 +127,14 @@
 
     .news-card {
       display: block;
-      background: #fff;
-      border-radius: 22px;
       overflow: hidden;
-      text-decoration: none;
       color: inherit;
-      box-shadow: 0 16px 40px rgba(0, 80, 150, 0.12);
-      transition: 0.25s ease;
+      text-decoration: none;
+      background: #ffffff;
       border: 1px solid #e5f2fb;
+      border-radius: 22px;
+      box-shadow: 0 16px 40px rgba(0, 80, 150, 0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .news-card:hover {
@@ -65,21 +145,21 @@
     .news-media-wrap {
       width: 100%;
       height: 210px;
-      background: #dff3ff;
       overflow: hidden;
+      background: #dff3ff;
     }
 
     .news-media {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .news-placeholder {
+      display: flex;
       width: 100%;
       height: 100%;
-      display: flex;
       align-items: center;
       justify-content: center;
       color: #13a8f2;
@@ -93,25 +173,25 @@
     }
 
     .news-date {
+      margin-bottom: 10px;
       color: #13a8f2;
       font-size: 13px;
       font-weight: 800;
-      margin-bottom: 10px;
     }
 
     .news-title {
       margin: 0 0 10px;
       color: #073b73;
       font-size: 20px;
-      line-height: 1.35;
       font-weight: 900;
+      line-height: 1.35;
     }
 
     .news-info {
+      margin: 0 0 18px;
       color: #5f7590;
       font-size: 14px;
       line-height: 1.7;
-      margin: 0 0 18px;
     }
 
     .news-read {
@@ -119,22 +199,31 @@
       align-items: center;
       gap: 8px;
       color: #13a8f2;
-      font-weight: 900;
       font-size: 14px;
+      font-weight: 900;
     }
 
     .news-empty {
       grid-column: 1 / -1;
-      text-align: center;
-      background: #fff;
       padding: 35px;
-      border-radius: 18px;
       color: #5f7590;
+      text-align: center;
+      background: #ffffff;
+      border-radius: 18px;
       box-shadow: 0 12px 35px rgba(0, 80, 150, 0.08);
     }
 
     .lang-kh,
     .lang-cn {
+      display: none;
+    }
+
+    html[data-lang="en"] .lang-en {
+      display: block;
+    }
+
+    html[data-lang="en"] .lang-kh,
+    html[data-lang="en"] .lang-cn {
       display: none;
     }
 
@@ -156,22 +245,35 @@
       display: block;
     }
 
-    html[data-lang="en"] .lang-kh,
-    html[data-lang="en"] .lang-cn {
-      display: none;
-    }
+    @media (max-width: 1100px) {
+      .header .nav {
+        min-height: 76px;
+      }
 
-    html[data-lang="en"] .lang-en {
-      display: block;
+      .header .menu {
+        white-space: normal;
+      }
     }
 
     @media (max-width: 980px) {
       .news-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 650px) {
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-text > p {
+        font-size: 16px;
+      }
+
+      .news-section {
+        padding: 60px 0;
+      }
+
       .news-grid {
         grid-template-columns: 1fr;
       }
@@ -179,25 +281,132 @@
       .news-head h2 {
         font-size: 30px;
       }
+    }
+  </style>
 
-      .news-section {
-        padding: 60px 0;
+  <style>
+    /* Homepage title stays white in English, Khmer and Chinese */
+    .hero .hero-text h1,
+    .hero .hero-text h1 *,
+    html[data-lang="en"] .hero .hero-text h1,
+    html[data-lang="kh"] .hero .hero-text h1,
+    html[data-lang="cn"] .hero .hero-text h1 {
+      color: #ffffff !important;
+    }
+
+    .hero .hero-text > span {
+      color: #31c4ff !important;
+    }
+
+    .hero .hero-text > p {
+      color: #eef8ff !important;
+    }
+
+    .hero .hero-points strong {
+      color: #ffffff !important;
+    }
+
+    .hero .hero-points small {
+      color: #dcefff !important;
+    }
+  </style>
+
+  <style>
+    /* =========================================================
+       ASIANCAM SINGLE NAV UNDERLINE — ALL PUBLIC PAGES
+       One underline only for active, hover and keyboard focus.
+       ========================================================= */
+    .header .menu a,
+    .site-header .menu a {
+      position: relative !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #079bd9 14%,
+        #19bff3 50%,
+        #73ddff 86%,
+        transparent 100%
+      ) !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% calc(100% - 5px) !important;
+      background-size: 0 4px !important;
+
+      transition:
+        color 180ms ease,
+        background-size 230ms cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    /* Remove the two old pseudo-element underline systems */
+    .header .menu a::before,
+    .header .menu a::after,
+    .site-header .menu a::before,
+    .site-header .menu a::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .header .menu a:hover,
+    .header .menu a:focus-visible,
+    .header .menu a.active,
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible,
+    .site-header .menu a.active {
+      color: #079edc !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-size: 46px 4px !important;
+    }
+
+    .header .menu a:focus-visible,
+    .site-header .menu a:focus-visible {
+      outline: 2px solid rgba(19, 168, 242, 0.24) !important;
+      outline-offset: 4px !important;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .header .menu a,
+      .site-header .menu a {
+        background-position: 0 100% !important;
+      }
+
+      .header .menu a:hover,
+      .header .menu a:focus-visible,
+      .header .menu a.active,
+      .site-header .menu a:hover,
+      .site-header .menu a:focus-visible,
+      .site-header .menu a.active {
+        background-size: 34px 3px !important;
       }
     }
   </style>
+
 </head>
+
 <body>
 
-<header class="site-header">
+<header class="header">
   <div class="container nav">
-    <a href="index.html" class="logo">
-      <img src="assets/img/logo.png" alt="Asian Cam Advisory">
+    <a href="/" class="logo-wrap">
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+    <button type="button" class="menu-btn" onclick="toggleMenu()">MENU</button>
 
     <nav class="menu" id="mainMenu">
-      <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+      <a href="/" class="active" data-i18n="nav_home">Home</a>
       <a href="about.html" data-i18n="nav_about">About Us</a>
       <a href="services.html" data-i18n="nav_services">Services</a>
       <a href="clients.html" data-i18n="nav_clients">Clients</a>
@@ -207,154 +416,232 @@
     </nav>
 
     <div class="langs">
-      <button data-lang="en" onclick="setLang('en'); document.documentElement.setAttribute('data-lang','en');">EN</button>
-      <button data-lang="kh" onclick="setLang('kh'); document.documentElement.setAttribute('data-lang','kh');">KH</button>
-      <button data-lang="cn" onclick="setLang('cn'); document.documentElement.setAttribute('data-lang','cn');">中文</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">&#20013;&#25991;</button>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-blue"></div>
+<main>
+  <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-blue"></div>
 
-  <div class="container hero-content">
-    <div class="hero-text reveal">
-      <span data-i18n="hero_kicker">Professional Accounting & Tax Advisory</span>
-      <h1 data-i18n="hero_title">Your Trusted Partner in Accounting & Tax</h1>
-      <p data-i18n="hero_text">
-        We provide professional accounting, tax and business advisory services to help your business grow with confidence.
-      </p>
+    <div class="container hero-content">
+      <div class="hero-text reveal">
+        <span data-i18n="hero_kicker">Professional Accounting &amp; Tax Advisory</span>
 
-      <a href="contact.html" class="btn">
-        <span data-i18n="btn_consult">Free Consultation</span>
-        <em>›</em>
-      </a>
+        <h1 data-i18n="hero_title">
+          Your Trusted Partner in Accounting &amp; Tax
+        </h1>
 
-      <div class="hero-points">
-        <div>
-          <strong data-i18n="point1_title">Trusted Expertise</strong>
-          <small data-i18n="point1_text">Years of experience you can rely on</small>
-        </div>
-        <div>
-          <strong data-i18n="point2_title">Business Focused</strong>
-          <small data-i18n="point2_text">Solutions tailored for your growth</small>
-        </div>
-        <div>
-          <strong data-i18n="point3_title">Client Success</strong>
-          <small data-i18n="point3_text">Your success is our mission</small>
+        <p data-i18n="hero_text">
+          We provide professional accounting, tax and business advisory services
+          to help your business grow with confidence.
+        </p>
+
+        <a href="contact.html" class="btn">
+          <span data-i18n="btn_consult">Free Consultation</span>
+          <em aria-hidden="true">&#8594;</em>
+        </a>
+
+        <div class="hero-points">
+          <div>
+            <strong data-i18n="point1_title">Local Expertise</strong>
+            <small data-i18n="point1_text">Cambodian business knowledge</small>
+          </div>
+
+          <div>
+            <strong data-i18n="point2_title">Professional Standard</strong>
+            <small data-i18n="point2_text">Clear process and reporting</small>
+          </div>
+
+          <div>
+            <strong data-i18n="point3_title">Long-Term Trust</strong>
+            <small data-i18n="point3_text">Support beyond one service</small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="services-floating">
-  <div class="container">
-    <div class="service-card reveal">
-      <div class="icon">▦</div>
-      <h3 data-i18n="mini1">Accounting Services</h3>
-      <p data-i18n="mini1p">Comprehensive accounting solutions tailored to your business needs.</p>
-      <a href="services.html" data-i18n="learn_more">Learn More →</a>
-    </div>
-
-    <div class="service-card reveal">
-      <div class="icon">▤</div>
-      <h3 data-i18n="mini2">Tax Services</h3>
-      <p data-i18n="mini2p">Effective tax planning and compliance to minimize your tax liabilities.</p>
-      <a href="services.html" data-i18n="learn_more">Learn More →</a>
-    </div>
-
-    <div class="service-card reveal">
-      <div class="icon">♙</div>
-      <h3 data-i18n="mini3">Advisory Services</h3>
-      <p data-i18n="mini3p">Expert business advisory to support your growth and success.</p>
-      <a href="services.html" data-i18n="learn_more">Learn More →</a>
-    </div>
-
-    <div class="service-card reveal">
-      <div class="icon">♙</div>
-      <h3 data-i18n="mini4">Payroll & HR Services</h3>
-      <p data-i18n="mini4p">Reliable payroll and HR solutions to streamline your operations.</p>
-      <a href="services.html" data-i18n="learn_more">Learn More →</a>
-    </div>
-  </div>
-</section>
-
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><div class="stat-icon">◎</div><strong>10+</strong><span data-i18n="stat_year">Years of Experience</span></div>
-    <div class="stat"><div class="stat-icon">♙</div><strong>200+</strong><span data-i18n="stat_client">Happy Clients</span></div>
-    <div class="stat"><div class="stat-icon">▣</div><strong>500+</strong><span data-i18n="stat_project">Projects Completed</span></div>
-    <div class="stat"><div class="stat-icon">○</div><strong>15+</strong><span data-i18n="stat_team">Professional Team</span></div>
-  </div>
-</section>
-
-<section class="news-section">
-  <div class="container">
-    <div class="news-head reveal">
-      <span>COMPANY UPDATES</span>
-      <h2>Latest News</h2>
-      <p>
-        Stay updated with Asian Cam Advisory company announcements, tax updates, and business information.
-      </p>
-    </div>
-
-    <div class="news-grid">
-      {% for news in latest_news %}
-      <a href="{% url 'news_detail' news.id %}" class="news-card reveal">
-        <div class="news-media-wrap">
-          {% if news.video %}
-            <video class="news-media" muted>
-              <source src="{{ news.video.url }}">
-            </video>
-          {% elif news.image %}
-            <img src="{{ news.image.url }}" class="news-media" alt="{{ news.title_en }}">
-          {% else %}
-            <div class="news-placeholder">NEWS</div>
-          {% endif %}
-        </div>
-
-        <div class="news-body">
-          <div class="news-date">{{ news.created_at|date:"d M Y" }}</div>
-
-          <h3 class="news-title lang-en">{{ news.title_en }}</h3>
-          <h3 class="news-title lang-kh">{{ news.title_kh|default:news.title_en }}</h3>
-          <h3 class="news-title lang-cn">{{ news.title_cn|default:news.title_en }}</h3>
-
-          <p class="news-info lang-en">{{ news.short_en|truncatechars:130 }}</p>
-          <p class="news-info lang-kh">{{ news.short_kh|default:news.short_en|truncatechars:130 }}</p>
-          <p class="news-info lang-cn">{{ news.short_cn|default:news.short_en|truncatechars:130 }}</p>
-
-          <span class="news-read">Read More →</span>
-        </div>
-      </a>
-      {% empty %}
-      <div class="news-empty">
-        No news available yet. Please upload news from the dashboard.
+  <section class="services-floating">
+    <div class="container">
+      <div class="service-card reveal">
+        <div class="icon">AC</div>
+        <h3 data-i18n="mini1">Accounting Support</h3>
+        <p data-i18n="mini1p">Organized records and clear financial reporting.</p>
+        <a href="services.html">
+          <span data-i18n="learn_more">Learn More</span>
+          &#8594;
+        </a>
       </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
-<section class="cta">
-  <div class="container reveal">
-    <h2 data-i18n="cta_title">Ready to strengthen your business compliance?</h2>
-    <p data-i18n="cta_text">Speak with Asian Cam Advisory for accounting, tax and consulting support.</p>
-    <a href="contact.html" class="btn white">
-      <span data-i18n="cta_btn">Contact Us</span>
-      <em>›</em>
-    </a>
-  </div>
-</section>
+      <div class="service-card reveal">
+        <div class="icon">TX</div>
+        <h3 data-i18n="mini2">Tax Compliance</h3>
+        <p data-i18n="mini2p">Helping businesses meet tax duties correctly.</p>
+        <a href="services.html">
+          <span data-i18n="learn_more">Learn More</span>
+          &#8594;
+        </a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">AD</div>
+        <h3 data-i18n="mini3">Business Advisory</h3>
+        <p data-i18n="mini3p">Practical guidance for stable business growth.</p>
+        <a href="services.html">
+          <span data-i18n="learn_more">Learn More</span>
+          &#8594;
+        </a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">HR</div>
+        <h3 data-i18n="mini4">Payroll &amp; HR</h3>
+        <p data-i18n="mini4p">Payroll and staff administration support.</p>
+        <a href="services.html">
+          <span data-i18n="learn_more">Learn More</span>
+          &#8594;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat">
+        <div class="stat-icon">01</div>
+        <strong>10+</strong>
+        <span data-i18n="stat_year">Years Experience</span>
+      </div>
+
+      <div class="stat">
+        <div class="stat-icon">02</div>
+        <strong>200+</strong>
+        <span data-i18n="stat_client">Clients Supported</span>
+      </div>
+
+      <div class="stat">
+        <div class="stat-icon">03</div>
+        <strong>500+</strong>
+        <span data-i18n="stat_project">Projects Completed</span>
+      </div>
+
+      <div class="stat">
+        <div class="stat-icon">04</div>
+        <strong>15+</strong>
+        <span data-i18n="stat_team">Professional Team</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-section">
+    <div class="container">
+      <div class="news-head reveal">
+        <span data-i18n="news_kicker">COMPANY UPDATES</span>
+        <h2 data-i18n="news_title">Latest News</h2>
+        <p data-i18n="news_text">
+          Stay updated with Asian Cam Advisory company announcements,
+          tax updates and business information.
+        </p>
+      </div>
+
+      <div class="news-grid">
+        {% for news in latest_news %}
+          <a href="{% url 'news_detail' news.id %}" class="news-card reveal">
+            <div class="news-media-wrap">
+              {% if news.video %}
+                <video class="news-media" muted preload="metadata">
+                  <source src="{{ news.video.url }}">
+                </video>
+              {% elif news.image %}
+                <img
+                  src="{{ news.image.url }}"
+                  class="news-media"
+                  alt="{{ news.title_en }}"
+                >
+              {% else %}
+                <div class="news-placeholder">NEWS</div>
+              {% endif %}
+            </div>
+
+            <div class="news-body">
+              <div class="news-date">
+                {{ news.created_at|date:"d M Y" }}
+              </div>
+
+              <h3 class="news-title lang-en">
+                {{ news.title_en }}
+              </h3>
+
+              <h3 class="news-title lang-kh">
+                {{ news.title_kh|default:news.title_en }}
+              </h3>
+
+              <h3 class="news-title lang-cn">
+                {{ news.title_cn|default:news.title_en }}
+              </h3>
+
+              <p class="news-info lang-en">
+                {{ news.short_en|truncatechars:130 }}
+              </p>
+
+              <p class="news-info lang-kh">
+                {{ news.short_kh|default:news.short_en|truncatechars:130 }}
+              </p>
+
+              <p class="news-info lang-cn">
+                {{ news.short_cn|default:news.short_en|truncatechars:130 }}
+              </p>
+
+              <span class="news-read">
+                <span data-i18n="news_read">Read More</span>
+                &#8594;
+              </span>
+            </div>
+          </a>
+        {% empty %}
+          <div class="news-empty" data-i18n="news_empty">
+            No news available yet.
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container reveal">
+      <h2 data-i18n="cta_title">
+        Ready to strengthen your business compliance?
+      </h2>
+
+      <p data-i18n="cta_text">
+        Speak with Asian Cam Advisory for accounting, tax and consulting support.
+      </p>
+
+      <a href="contact.html" class="btn white">
+        <span data-i18n="cta_btn">Contact Us</span>
+        <em aria-hidden="true">&#8594;</em>
+      </a>
+    </div>
+  </section>
+</main>
 
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo.png" class="footer-logo" alt="Asian Cam">
-      <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
-      <div class="socials"><span>f</span><span>in</span><span>✉</span></div>
+      <img
+        src="/assets/img/logo.png"
+        class="logo-img"
+        alt="Asian Cam Advisory"
+      >
+
+      <p data-i18n="footer_desc">
+        Professional accounting, tax and business advisory services in Cambodia.
+      </p>
     </div>
 
     <div>
@@ -368,25 +655,27 @@
 
     <div>
       <h3 data-i18n="footer_contact">Contact</h3>
+
       <p data-i18n="footer_address">
-        1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune, Toul Kork District, Phnom Penh City, Cambodia.
+        1st Floor, Building No. 26, Street 610, Village 20,
+        Boeung Kak II Commune, Toul Kork District,
+        Phnom Penh City, Cambodia.
       </p>
-      <p>012 777 842 / 070 319 777 / 011 227 696 / 023 936 777</p>
+
+      <p>
+        012 777 842 / 070 319 777 /
+        011 227 696 / 023 936 777
+      </p>
+
       <p>asiancam@gmail.com</p>
     </div>
   </div>
 
-  <div class="copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
+  <div class="container copy" data-i18n="footer_copy">
+    &copy; 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.
+  </div>
 </footer>
 
-<script src="assets/js/lang.js"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const savedLang = localStorage.getItem("siteLang") || localStorage.getItem("lang") || "en";
-    document.documentElement.setAttribute("data-lang", savedLang);
-  });
-</script>
-
+<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
 </body>
 </html>

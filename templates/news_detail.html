@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ news.title_en }} | Asian Cam Advisory</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages">
 
   <style>
     body {
@@ -444,6 +445,89 @@
       }
     }
   </style>
+
+  <style>
+    /* =========================================================
+       ASIANCAM SINGLE NAV UNDERLINE — ALL PUBLIC PAGES
+       One underline only for active, hover and keyboard focus.
+       ========================================================= */
+    .header .menu a,
+    .site-header .menu a {
+      position: relative !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #079bd9 14%,
+        #19bff3 50%,
+        #73ddff 86%,
+        transparent 100%
+      ) !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% calc(100% - 5px) !important;
+      background-size: 0 4px !important;
+
+      transition:
+        color 180ms ease,
+        background-size 230ms cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    /* Remove the two old pseudo-element underline systems */
+    .header .menu a::before,
+    .header .menu a::after,
+    .site-header .menu a::before,
+    .site-header .menu a::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .header .menu a:hover,
+    .header .menu a:focus-visible,
+    .header .menu a.active,
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible,
+    .site-header .menu a.active {
+      color: #079edc !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-size: 46px 4px !important;
+    }
+
+    .header .menu a:focus-visible,
+    .site-header .menu a:focus-visible {
+      outline: 2px solid rgba(19, 168, 242, 0.24) !important;
+      outline-offset: 4px !important;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .header .menu a,
+      .site-header .menu a {
+        background-position: 0 100% !important;
+      }
+
+      .header .menu a:hover,
+      .header .menu a:focus-visible,
+      .header .menu a.active,
+      .site-header .menu a:hover,
+      .site-header .menu a:focus-visible,
+      .site-header .menu a.active {
+        background-size: 34px 3px !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -473,7 +557,7 @@
   <div class="article-hero-inner">
     <div class="breadcrumb">
       <a href="/">Home</a>
-      <span>›</span>
+      <span>鈥?/span>
       <span>News</span>
     </div>
 
@@ -507,12 +591,12 @@
 
       <main class="article-main">
         <div class="tool-row">
-          <a href="/" class="back-btn">← Back to Home</a>
+          <a href="/" class="back-btn">鈫?Back to Home</a>
 
           <div class="lang-buttons">
             <button type="button" class="active" onclick="showNewsLang('en', this)">EN</button>
             <button type="button" onclick="showNewsLang('kh', this)">KH</button>
-            <button type="button" onclick="showNewsLang('cn', this)">中文</button>
+            <button type="button" onclick="showNewsLang('cn', this)">涓枃</button>
           </div>
         </div>
 
@@ -570,7 +654,7 @@
           </div>
           <div class="side-line">
             <strong>Language</strong>
-            <span>EN / KH / 中文</span>
+            <span>EN / KH / 涓枃</span>
           </div>
         </div>
 
@@ -586,7 +670,7 @@
 </section>
 
 <div class="lightbox" id="lightbox">
-  <button type="button" onclick="closeLightbox()">×</button>
+  <button type="button" onclick="closeLightbox()">脳</button>
   <img src="" id="lightboxImg" alt="">
 </div>
 
@@ -595,7 +679,7 @@
     <div>
       <img src="/assets/img/logo.png" class="footer-logo" alt="Asian Cam">
       <p>Professional accounting, tax and business advisory services in Cambodia.</p>
-      <div class="socials"><span>f</span><span>in</span><span>✉</span></div>
+      <div class="socials"><span>f</span><span>in</span><span>鉁?/span></div>
     </div>
 
     <div>
@@ -615,12 +699,12 @@
     </div>
   </div>
 
-  <div class="copy">© 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
+  <div class="copy">漏 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
 </footer>
 
 </div>
 
-<script src="/assets/js/lang.js"></script>
+<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
 
 <script>
   function showNewsLang(lang, btn) {
@@ -664,6 +748,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>

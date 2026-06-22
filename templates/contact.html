@@ -3,25 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Contact | Asian Cam Advisory</title>
 
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/contact.css" />
-  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/contact.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages" />
+
+  <style>
+    /* =========================================================
+       ASIANCAM SINGLE NAV UNDERLINE — ALL PUBLIC PAGES
+       One underline only for active, hover and keyboard focus.
+       ========================================================= */
+    .header .menu a,
+    .site-header .menu a {
+      position: relative !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #079bd9 14%,
+        #19bff3 50%,
+        #73ddff 86%,
+        transparent 100%
+      ) !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% calc(100% - 5px) !important;
+      background-size: 0 4px !important;
+
+      transition:
+        color 180ms ease,
+        background-size 230ms cubic-bezier(.22, .8, .22, 1) !important;
+    }
+
+    /* Remove the two old pseudo-element underline systems */
+    .header .menu a::before,
+    .header .menu a::after,
+    .site-header .menu a::before,
+    .site-header .menu a::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .header .menu a:hover,
+    .header .menu a:focus-visible,
+    .header .menu a.active,
+    .site-header .menu a:hover,
+    .site-header .menu a:focus-visible,
+    .site-header .menu a.active {
+      color: #079edc !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-size: 46px 4px !important;
+    }
+
+    .header .menu a:focus-visible,
+    .site-header .menu a:focus-visible {
+      outline: 2px solid rgba(19, 168, 242, 0.24) !important;
+      outline-offset: 4px !important;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .header .menu a,
+      .site-header .menu a {
+        background-position: 0 100% !important;
+      }
+
+      .header .menu a:hover,
+      .header .menu a:focus-visible,
+      .header .menu a.active,
+      .site-header .menu a:hover,
+      .site-header .menu a:focus-visible,
+      .site-header .menu a.active {
+        background-size: 34px 3px !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <a href="index.html" class="logo-wrap">
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+    <a href="/" class="logo-wrap">
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+    <button type="button" class="menu-btn" onclick="toggleMenu()">MENU</button>
 
     <nav class="menu" id="mainMenu">
-      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="/" data-i18n="nav_home">Home</a>
       <a href="about.html" data-i18n="nav_about">About Us</a>
       <a href="services.html" data-i18n="nav_services">Services</a>
       <a href="clients.html" data-i18n="nav_clients">Clients</a>
@@ -31,9 +114,9 @@
     </nav>
 
     <div class="langs">
-      <button data-lang="en" onclick="setLang('en')">EN</button>
-      <button data-lang="kh" onclick="setLang('kh')">KH</button>
-      <button data-lang="cn" onclick="setLang('cn')">中文</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="kh" onclick="setLang('kh')">KH</button>
+      <button type="button" data-lang="cn" onclick="setLang('cn')">&#20013;&#25991;</button>
     </div>
   </div>
 </header>
@@ -41,20 +124,21 @@
 <section class="page-hero">
   <div class="container page-hero-inner">
     <div>
-      <div class="label">Contact Us</div>
+      <div class="label" data-i18n="nav_contact">Contact Us</div>
       <h1 data-i18n="contact_title">Contact Asian Cam Advisory</h1>
-      <p data-i18n="contact_sub">Contact us for accounting, tax, payroll and business advisory consultation.</p>
+      <p data-i18n="contact_sub">
+        Contact us for accounting, tax, payroll and business advisory consultation.
+      </p>
     </div>
 
-    <img src="assets/img/logo.png" class="page-logo" alt="AsianCam">
+    <img src="/assets/img/logo.png" class="page-logo" alt="Asian Cam Advisory">
   </div>
 </section>
 
 <section class="section">
   <div class="container contact-grid">
-
     <div class="contact-card">
-      <div class="label">Company Contact</div>
+      <div class="label" data-i18n="company_contact">Company Contact</div>
       <h2>Asian Cam Advisory Co., Ltd.</h2>
 
       <div class="contact-info">
@@ -77,24 +161,24 @@
         </p>
 
         <p>
-          <strong>Working Hours</strong><br>
+          <strong data-i18n="working_hours">Working Hours</strong><br>
           Monday - Saturday, 8:00 AM - 5:30 PM
         </p>
       </div>
     </div>
 
-    <form class="contact-card">
-      <div class="label">Send Message</div>
-      <h2>Request Consultation</h2>
+    <form class="contact-card" method="post">
+      {% csrf_token %}
+      <div class="label" data-i18n="send_message">Send Message</div>
+      <h2 data-i18n="request_consultation">Request Consultation</h2>
 
-      <input type="text" data-i18n-placeholder="name_placeholder" placeholder="Your Name">
-      <input type="email" data-i18n-placeholder="email_placeholder" placeholder="Your Email">
-      <input type="text" data-i18n-placeholder="phone_placeholder" placeholder="Phone Number">
-      <textarea data-i18n-placeholder="message_placeholder" placeholder="Message"></textarea>
+      <input type="text" name="name" data-i18n-placeholder="name_placeholder" placeholder="Your Name">
+      <input type="email" name="email" data-i18n-placeholder="email_placeholder" placeholder="Your Email">
+      <input type="text" name="phone" data-i18n-placeholder="phone_placeholder" placeholder="Phone Number">
+      <textarea name="message" data-i18n-placeholder="message_placeholder" placeholder="Message"></textarea>
 
       <button type="submit" class="btn primary" data-i18n="send">Send Message</button>
     </form>
-
   </div>
 </section>
 
@@ -109,7 +193,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo.png" class="logo-img" alt="AsianCam Logo">
+      <img src="/assets/img/logo.png" class="logo-img" alt="Asian Cam Advisory">
       <p data-i18n="footer_desc">Professional accounting, tax and business advisory services in Cambodia.</p>
     </div>
 
@@ -124,15 +208,20 @@
 
     <div>
       <h3 data-i18n="footer_contact">Contact</h3>
-      <p data-i18n="footer_address">1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune, Toul Kork District, Phnom Penh City, Cambodia.</p>
+      <p data-i18n="footer_address">
+        1st Floor, Building No. 26, Street 610, Village 20, Boeung Kak II Commune,
+        Toul Kork District, Phnom Penh City, Cambodia.
+      </p>
       <p>012 777 842 / 070 319 777 / 011 227 696 / 023 936 777</p>
       <p>asiancam@gmail.com</p>
     </div>
   </div>
 
-  <div class="container copy" data-i18n="footer_copy">© 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
+  <div class="container copy" data-i18n="footer_copy">
+    &copy; 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.
+  </div>
 </footer>
 
-<script src="assets/js/lang.js"></script>
+<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
 </body>
 </html>
