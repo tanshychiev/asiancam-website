@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ news.title_en }} | Asian Cam Advisory</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-nav-all-pages">
+  <link rel="stylesheet" href="/assets/css/professional-fonts.css?v=20260622-news-detail-fixed">
 
   <style>
     body {
@@ -557,7 +557,7 @@
   <div class="article-hero-inner">
     <div class="breadcrumb">
       <a href="/">Home</a>
-      <span>鈥?/span>
+      <span class="breadcrumb-separator" aria-hidden="true">&#8250;</span>
       <span>News</span>
     </div>
 
@@ -591,12 +591,12 @@
 
       <main class="article-main">
         <div class="tool-row">
-          <a href="/" class="back-btn">鈫?Back to Home</a>
+          <a href="/" class="back-btn">&#8592; Back to Home</a>
 
           <div class="lang-buttons">
             <button type="button" class="active" onclick="showNewsLang('en', this)">EN</button>
             <button type="button" onclick="showNewsLang('kh', this)">KH</button>
-            <button type="button" onclick="showNewsLang('cn', this)">涓枃</button>
+            <button type="button" onclick="showNewsLang('cn', this)">&#20013;&#25991;</button>
           </div>
         </div>
 
@@ -654,7 +654,7 @@
           </div>
           <div class="side-line">
             <strong>Language</strong>
-            <span>EN / KH / 涓枃</span>
+            <span>EN / KH / &#20013;&#25991;</span>
           </div>
         </div>
 
@@ -670,7 +670,7 @@
 </section>
 
 <div class="lightbox" id="lightbox">
-  <button type="button" onclick="closeLightbox()">脳</button>
+  <button type="button" onclick="closeLightbox()">&times;</button>
   <img src="" id="lightboxImg" alt="">
 </div>
 
@@ -679,7 +679,7 @@
     <div>
       <img src="/assets/img/logo.png" class="footer-logo" alt="Asian Cam">
       <p>Professional accounting, tax and business advisory services in Cambodia.</p>
-      <div class="socials"><span>f</span><span>in</span><span>鉁?/span></div>
+      <div class="socials"><span>f</span><span>in</span><span>&#9993;</span></div>
     </div>
 
     <div>
@@ -699,12 +699,12 @@
     </div>
   </div>
 
-  <div class="copy">漏 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
+  <div class="copy">&copy; 2026 ASIAN CAM ADVISORY CO., LTD. All Rights Reserved.</div>
 </footer>
 
 </div>
 
-<script src="/assets/js/lang.js?v=20260622-nav-all-pages"></script>
+<script src="/assets/js/lang.js?v=20260622-news-detail-fixed"></script>
 
 <script>
   function showNewsLang(lang, btn) {
