@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if is_edit %}Edit News{% else %}Add News{% endif %} | Asian Cam</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef6fb;
+      color: #0b2b4c;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 30px auto;
+      padding: 18px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 16px 45px rgba(0, 80, 150, 0.12);
+      overflow: hidden;
+    }
+
+    .topbar {
+      padding: 24px 30px;
+      background: linear-gradient(135deg, #073b73, #13a8f2);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .topbar p {
+      margin: 6px 0 0;
+      opacity: 0.9;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-white {
+      background: white;
+      color: #0877bd;
+    }
+
+    .btn-blue {
+      background: #13a8f2;
+      color: white;
+    }
+
+    .btn-light {
+      background: #eef8ff;
+      color: #0877bd;
+    }
+
+    .content {
+      padding: 28px 30px 34px;
+    }
+
+    .msg {
+      background: #e9fff2;
+      color: #137a3b;
+      border: 1px solid #b9efcc;
+      padding: 12px 15px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+
+    .section {
+      border: 1px solid #dcecf7;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 22px;
+      background: #fbfdff;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #073b73;
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: #60788f;
+      font-size: 14px;
+    }
+
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+      color: #123a5d;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #cbdfea;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 14px;
+      background: white;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 95px;
+    }
+
+    textarea[name*="content"] {
+      min-height: 220px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #13a8f2;
+      box-shadow: 0 0 0 3px rgba(19, 168, 242, 0.12);
+    }
+
+    .preview-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid #cfe4f2;
+      margin-bottom: 10px;
+      background: #eef8ff;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #6b8195;
+      margin-top: 6px;
+    }
+
+    .gallery-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .preview-box {
+      position: relative;
+      height: 130px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #d6e8f4;
+      background: #f5fbff;
+    }
+
+    .preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .x-btn {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      border: none;
+      background: #d72828;
+      color: white;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .delete-check {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      background: white;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #c62828;
+    }
+
+    .publish-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .publish-box {
+      background: #eef8ff;
+      border: 1px solid #cfefff;
+      padding: 14px;
+      border-radius: 14px;
+      font-weight: bold;
+    }
+
+    .bottom-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-top: 10px;
+    }
+
+    .save-btn {
+      background: linear-gradient(135deg, #13a8f2, #006fd6);
+      color: white;
+      padding: 14px 30px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 950px) {
+      .lang-grid,
+      .media-grid,
+      .publish-row {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        padding: 22px;
+      }
+
+      .topbar {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+
+    <div class="topbar">
+      <div>
+        <h1>{% if is_edit %}Edit News{% else %}Add News{% endif %}</h1>
+        <p>Create company news with English, Khmer, Chinese, photos, and video.</p>
+      </div>
+
+      <div class="top-actions">
+        <a href="{% url 'dashboard_news_list' %}" class="btn btn-white">News List</a>
+        <a href="/" class="btn btn-white">View Website</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="msg">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="section">
+          <div class="section-head">
+            <h2>1. News Title</h2>
+            <p>Enter the title in each language. If Khmer or Chinese is empty, English will show as fallback.</p>
+          </div>
+
+          <div class="lang-grid">
+            <div class="form-group">
+              <label>English Title</label>
+              {{ form.title_en }}
+            </div>
+
+            <div class="form-group">
+              <label>Khmer Title</label>
+              {{ form.title_kh }}
+            </div>
+
+            <div class="form-group">
+              <label>Chinese Title</label>
+              {{ form.title_cn }}
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>2. Short Info</h2>
+            <p>This short text will show on the Home page news card.</p>
+          </div>
+
+          <div class="lang-grid">
+            <div class="form-group">
+              <label>English Short Info</label>
+              {{ form.short_en }}
+            </div>
+
+            <div class="form-group">
+              <label>Khmer Short Info</label>
+              {{ form.short_kh }}
+            </div>
+
+            <div class="form-group">
+              <label>Chinese Short Info</label>
+              {{ form.short_cn }}
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>3. Full News Content</h2>
+            <p>This full text will show when visitors click the news.</p>
+          </div>
+
+          <div class="lang-grid">
+            <div class="form-group">
+              <label>English Content</label>
+              {{ form.content_en }}
+            </div>
+
+            <div class="form-group">
+              <label>Khmer Content</label>
+              {{ form.content_kh }}
+            </div>
+
+            <div class="form-group">
+              <label>Chinese Content</label>
+              {{ form.content_cn }}
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>4. Main Media</h2>
+            <p>Thumbnail shows on Home page. Detail photo and video show on news detail page.</p>
+          </div>
+
+          <div class="media-grid">
+            <div class="form-group">
+              <label>Thumbnail Photo</label>
+              {% if is_edit and news.image %}
+                <img src="{{ news.image.url }}" class="preview-img" alt="">
+              {% endif %}
+              {{ form.image }}
+              <div class="hint">Used for Home page news card.</div>
+            </div>
+
+            <div class="form-group">
+              <label>Detail Photo</label>
+              {% if is_edit and news.detail_image %}
+                <img src="{{ news.detail_image.url }}" class="preview-img" alt="">
+              {% endif %}
+              {{ form.detail_image }}
+              <div class="hint">Used as big image in news detail page.</div>
+            </div>
+
+            <div class="form-group">
+              <label>Video</label>
+              {% if is_edit and news.video %}
+                <p>Current video: <a href="{{ news.video.url }}" target="_blank">View video</a></p>
+              {% endif %}
+              {{ form.video }}
+              <div class="hint">Optional video for news detail page.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>5. More Photos</h2>
+            <p>Add extra photos for the news gallery. You can click “Add More Photo” many times.</p>
+          </div>
+
+          <div class="gallery-toolbar">
+            <button type="button" class="btn btn-light" onclick="addMoreFileInput()">+ Add More Photo</button>
+          </div>
+
+          <div id="fileInputsWrap">
+            <input type="file" name="gallery_images" class="gallery-file-input" accept="image/*" multiple>
+          </div>
+
+          <div id="newPreview" class="gallery-preview"></div>
+
+          {% if is_edit and news.photos.all %}
+            <div class="section-head" style="margin-top:22px;">
+              <h2>Existing Photos</h2>
+              <p>Tick delete if you want to remove old photos, then click Update News.</p>
+            </div>
+
+            <div class="gallery-preview">
+              {% for photo in news.photos.all %}
+                <div class="preview-box">
+                  <label class="delete-check">
+                    <input type="checkbox" name="delete_photos" value="{{ photo.id }}">
+                    Delete
+                  </label>
+                  <img src="{{ photo.photo.url }}" alt="">
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>6. Publish & Display Order</h2>
+            <p>Higher sort order will show first on the Home page. Example: 100 shows before 50.</p>
+          </div>
+
+          <div class="publish-row">
+            <div class="form-group">
+              <label>Sort Order</label>
+              {{ form.sort_order }}
+            </div>
+
+            <div class="publish-box">
+              <label>
+                {{ form.is_published }}
+                Publish this news on website
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-actions">
+          <a href="{% url 'dashboard_news_list' %}" class="btn btn-light">Cancel</a>
+          <button type="submit" class="btn save-btn">
+            {% if is_edit %}Update News{% else %}Save News{% endif %}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const fileInputsWrap = document.getElementById("fileInputsWrap");
+  const preview = document.getElementById("newPreview");
+
+  function addMoreFileInput() {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.name = "gallery_images";
+    input.accept = "image/*";
+    input.multiple = true;
+    input.className = "gallery-file-input";
+    input.style.marginTop = "10px";
+    input.addEventListener("change", renderPreview);
+    fileInputsWrap.appendChild(input);
+  }
+
+  document.querySelectorAll(".gallery-file-input").forEach(input => {
+    input.addEventListener("change", renderPreview);
+  });
+
+  function renderPreview() {
+    preview.innerHTML = "";
+
+    const inputs = document.querySelectorAll(".gallery-file-input");
+
+    inputs.forEach((input, inputIndex) => {
+      Array.from(input.files).forEach((file) => {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const box = document.createElement("div");
+          box.className = "preview-box";
+
+          box.innerHTML = `
+            <button type="button" class="x-btn" onclick="removeFileInput(${inputIndex})">×</button>
+            <img src="${e.target.result}" alt="">
+          `;
+
+          preview.appendChild(box);
+        };
+
+        reader.readAsDataURL(file);
+      });
+    });
+  }
+
+  function removeFileInput(inputIndex) {
+    const inputs = document.querySelectorAll(".gallery-file-input");
+    const input = inputs[inputIndex];
+
+    if (input) {
+      input.remove();
+    }
+
+    renderPreview();
+  }
+</script>
+
+</body>
+</html>

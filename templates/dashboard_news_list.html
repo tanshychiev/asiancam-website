@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News Dashboard | Asian Cam</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f8fb;
+      color: #0b2b4c;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0, 80, 150, 0.12);
+      padding: 28px;
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #e5eef6;
+      padding-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #073b73;
+    }
+
+    p {
+      color: #5f7590;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #13a8f2;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 8px;
+      border: none;
+    }
+
+    .btn-light {
+      background: #eef8ff;
+      color: #0877bd;
+    }
+
+    .btn-danger {
+      background: #ffecec;
+      color: #c62828;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #e5eef6;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background: #f2f9ff;
+      color: #073b73;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .published {
+      color: #16863a;
+    }
+
+    .draft {
+      color: #c77700;
+    }
+
+    .msg {
+      background: #e9fff2;
+      color: #137a3b;
+      border: 1px solid #b9efcc;
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 800px) {
+      .head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      table {
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+
+      .btn {
+        margin: 3px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+
+    <div class="head">
+      <div>
+        <h1>News Dashboard</h1>
+        <p>Manage company news, photo, video, and language content.</p>
+      </div>
+
+      <div>
+        <a href="/" class="btn btn-light">View Website</a>
+        <a href="{% url 'dashboard_news_add' %}" class="btn">+ Add News</a>
+      </div>
+    </div>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="msg">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th style="width: 220px;">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for news in news_list %}
+        <tr>
+          <td>{{ news.title_en }}</td>
+          <td>{{ news.created_at|date:"d M Y" }}</td>
+          <td>
+            {% if news.is_published %}
+              <span class="status published">Published</span>
+            {% else %}
+              <span class="status draft">Draft</span>
+            {% endif %}
+          </td>
+          <td>
+            <a href="{% url 'dashboard_news_edit' news.id %}" class="btn btn-light">Edit</a>
+            <a href="{% url 'dashboard_news_delete' news.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">No news uploaded yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+</body>
+</html>
