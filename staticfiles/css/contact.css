@@ -1,0 +1,171 @@
+.page-hero{
+  background:
+    radial-gradient(circle at 10% 20%,rgba(32,174,235,.16),transparent 28%),
+    linear-gradient(90deg,#EAF8FF 0%,#FFFFFF 100%);
+  padding:88px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.page-hero-inner{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:48px;
+}
+
+.page-hero h1{
+  font-size:54px;
+  line-height:1.08;
+  margin:0 0 18px;
+  color:var(--navy);
+  font-weight:900;
+}
+
+.page-hero p{
+  max-width:620px;
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.8;
+  margin:0;
+}
+
+.page-hero h1::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:4px;
+  background:var(--sky);
+  border-radius:999px;
+  margin-top:22px;
+}
+
+.page-logo{
+  height:86px;
+  justify-self:end;
+}
+
+/* CONTACT SECTION */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.contact-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:38px;
+  box-shadow:var(--shadow);
+}
+
+.contact-card .label{
+  color:var(--sky2);
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.contact-card h2{
+  margin:0 0 24px;
+  font-size:32px;
+  line-height:1.2;
+  color:var(--navy);
+}
+
+.contact-info{
+  display:grid;
+  gap:18px;
+}
+
+.contact-info p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:16px;
+}
+
+.contact-info strong{
+  display:block;
+  color:var(--navy);
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+/* FORM */
+.contact-card form,
+form.contact-card{
+  display:block;
+}
+
+.contact-card input,
+.contact-card textarea{
+  width:100%;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  margin-bottom:16px;
+  font:inherit;
+  outline:none;
+  background:#F9FDFF;
+  color:var(--navy);
+}
+
+.contact-card textarea{
+  height:150px;
+  resize:vertical;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus{
+  border-color:var(--sky);
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(32,174,235,.12);
+}
+
+.contact-card .btn{
+  width:100%;
+  margin-top:4px;
+  border:none;
+  cursor:pointer;
+}
+
+/* KHMER FIX */
+html[lang="kh"] .contact-card h2,
+html[lang="kh"] .contact-info p,
+html[lang="kh"] .contact-card input,
+html[lang="kh"] .contact-card textarea,
+html[lang="kh"] .contact-card button{
+  font-family:"Noto Sans Khmer","Khmer OS Battambang","Segoe UI",Arial,sans-serif;
+}
+
+/* MOBILE */
+@media(max-width:980px){
+  .page-hero{
+    padding:64px 0;
+  }
+
+  .page-hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .page-hero h1{
+    font-size:36px;
+  }
+
+  .page-logo{
+    justify-self:start;
+    height:64px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-card{
+    padding:26px;
+  }
+}

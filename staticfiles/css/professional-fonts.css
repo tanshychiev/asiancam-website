@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-en: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-kh: "Noto Sans Khmer", "Khmer OS Battambang", "Leelawadee UI", sans-serif;
+  --font-cn: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", "Heiti SC", sans-serif;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
+
+body {
+  font-family: var(--font-en);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.menu a,
+.nav a,
+.btn,
+.hero-btn,
+.langs button,
+.service-card a,
+.news-read {
+  font-family: inherit;
+}
+
+.menu a {
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong,
+b {
+  letter-spacing: -0.025em;
+}
+
+p,
+li,
+small,
+span {
+  letter-spacing: normal;
+}
+
+/* Khmer */
+html[lang="km"] body,
+body.khmer,
+body.lang-kh {
+  font-family: var(--font-kh);
+  letter-spacing: 0;
+  line-height: 1.8;
+}
+
+html[lang="km"] h1,
+html[lang="km"] h2,
+html[lang="km"] h3,
+html[lang="km"] h4,
+html[lang="km"] strong,
+html[lang="km"] b,
+body.khmer h1,
+body.khmer h2,
+body.khmer h3,
+body.khmer h4,
+body.khmer strong,
+body.khmer b {
+  font-weight: 700 !important;
+  letter-spacing: 0;
+  line-height: 1.38;
+}
+
+html[lang="km"] p,
+html[lang="km"] li,
+html[lang="km"] small,
+body.khmer p,
+body.khmer li,
+body.khmer small {
+  line-height: 1.9;
+}
+
+html[lang="km"] .menu a,
+body.khmer .menu a {
+  font-size: 14px;
+  font-weight: 600 !important;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+html[lang="km"] .hero-text,
+body.khmer .hero-text {
+  width: 540px;
+}
+
+html[lang="km"] .hero-text h1,
+body.khmer .hero-text h1 {
+  font-size: 42px;
+  line-height: 1.38;
+}
+
+html[lang="km"] .hero-text > span,
+html[lang="km"] .section-head > span,
+html[lang="km"] .services-hero-text > span,
+body.khmer .hero-text > span,
+body.khmer .section-head > span,
+body.khmer .services-hero-text > span {
+  font-weight: 600 !important;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[lang="km"] .services-hero-text,
+body.khmer .services-hero-text {
+  max-width: 620px;
+}
+
+html[lang="km"] .services-hero-text h1,
+body.khmer .services-hero-text h1 {
+  font-size: 43px;
+  line-height: 1.42;
+}
+
+html[lang="km"] .btn,
+html[lang="km"] .hero-btn,
+body.khmer .btn,
+body.khmer .hero-btn {
+  font-weight: 600 !important;
+}
+
+/* Simplified Chinese */
+html[lang="zh"] body,
+body.chinese,
+body.lang-cn {
+  font-family: var(--font-cn);
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+html[lang="zh"] h1,
+html[lang="zh"] h2,
+html[lang="zh"] h3,
+html[lang="zh"] h4,
+html[lang="zh"] strong,
+html[lang="zh"] b,
+body.chinese h1,
+body.chinese h2,
+body.chinese h3,
+body.chinese h4,
+body.chinese strong,
+body.chinese b {
+  font-weight: 700 !important;
+  letter-spacing: 0;
+  line-height: 1.28;
+}
+
+html[lang="zh"] p,
+html[lang="zh"] li,
+html[lang="zh"] small,
+body.chinese p,
+body.chinese li,
+body.chinese small {
+  line-height: 1.8;
+}
+
+html[lang="zh"] .menu a,
+body.chinese .menu a {
+  font-size: 14px;
+  font-weight: 600 !important;
+  letter-spacing: 0;
+}
+
+html[lang="zh"] .hero-text,
+body.chinese .hero-text {
+  width: 530px;
+}
+
+html[lang="zh"] .hero-text h1,
+body.chinese .hero-text h1 {
+  font-size: 44px;
+  line-height: 1.26;
+}
+
+html[lang="zh"] .hero-text > span,
+html[lang="zh"] .section-head > span,
+html[lang="zh"] .services-hero-text > span,
+body.chinese .hero-text > span,
+body.chinese .section-head > span,
+body.chinese .services-hero-text > span {
+  font-weight: 600 !important;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+html[lang="zh"] .services-hero-text,
+body.chinese .services-hero-text {
+  max-width: 620px;
+}
+
+html[lang="zh"] .services-hero-text h1,
+body.chinese .services-hero-text h1 {
+  font-size: 45px;
+  line-height: 1.3;
+}
+
+html[lang="zh"] .btn,
+html[lang="zh"] .hero-btn,
+body.chinese .btn,
+body.chinese .hero-btn {
+  font-weight: 600 !important;
+}
+
+@media (max-width: 980px) {
+  html[lang="km"] .hero-text,
+  html[lang="zh"] .hero-text,
+  body.khmer .hero-text,
+  body.chinese .hero-text {
+    width: 100%;
+  }
+
+  html[lang="km"] .hero-text h1,
+  body.khmer .hero-text h1 {
+    font-size: 35px;
+  }
+
+  html[lang="zh"] .hero-text h1,
+  body.chinese .hero-text h1 {
+    font-size: 37px;
+  }
+
+  html[lang="km"] .services-hero-text h1,
+  body.khmer .services-hero-text h1,
+  html[lang="zh"] .services-hero-text h1,
+  body.chinese .services-hero-text h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 650px) {
+  html[lang="km"] .hero-text h1,
+  body.khmer .hero-text h1 {
+    font-size: 31px;
+  }
+
+  html[lang="zh"] .hero-text h1,
+  body.chinese .hero-text h1 {
+    font-size: 33px;
+  }
+
+  html[lang="km"] .menu a,
+  body.khmer .menu a,
+  html[lang="zh"] .menu a,
+  body.chinese .menu a {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   PREMIUM SINGLE NAVIGATION UNDERLINE
+   Shared by Home, About, Services, Clients, Team,
+   Certificates and Contact pages.
+   ========================================================= */
+
+.header .menu a,
+.site-header .menu a {
+  position: relative !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  outline: none;
+}
+
+/*
+  Remove the old underline created by base.css/style.css.
+  The new underline below uses only ::before.
+*/
+.header .menu a::after,
+.site-header .menu a::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* New single animated underline */
+.header .menu a::before,
+.site-header .menu a::before {
+  content: "" !important;
+  position: absolute;
+  left: 50%;
+  bottom: 9px;
+  width: 34px;
+  height: 4px;
+  margin: 0;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #058fd2 0%,
+    #10b7f3 52%,
+    #65d9ff 100%
+  );
+  box-shadow:
+    0 3px 8px rgba(16, 183, 243, 0.28),
+    0 0 0 1px rgba(16, 183, 243, 0.05);
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0.25);
+  transform-origin: center;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    box-shadow 180ms ease;
+  pointer-events: none;
+}
+
+.header .menu a:hover,
+.header .menu a:focus-visible,
+.header .menu a.active,
+.site-header .menu a:hover,
+.site-header .menu a:focus-visible,
+.site-header .menu a.active {
+  color: #079edc !important;
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+/*
+  Hover and active use the same pseudo-element,
+  so the Home link can never display two underlines.
+*/
+.header .menu a:hover::before,
+.header .menu a:focus-visible::before,
+.header .menu a.active::before,
+.site-header .menu a:hover::before,
+.site-header .menu a:focus-visible::before,
+.site-header .menu a.active::before {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+  box-shadow:
+    0 4px 12px rgba(16, 183, 243, 0.38),
+    0 0 0 1px rgba(16, 183, 243, 0.08);
+}
+
+/* Do not create an extra underline when hovering the active page */
+.header .menu a.active:hover::before,
+.header .menu a.active:focus-visible::before,
+.site-header .menu a.active:hover::before,
+.site-header .menu a.active:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
+@media (max-width: 980px) {
+  .header .menu a::before,
+  .site-header .menu a::before {
+    left: 0;
+    bottom: 4px;
+    width: 28px;
+    height: 3px;
+    transform: scaleX(0.25);
+    transform-origin: left center;
+  }
+
+  .header .menu a:hover::before,
+  .header .menu a:focus-visible::before,
+  .header .menu a.active::before,
+  .site-header .menu a:hover::before,
+  .site-header .menu a:focus-visible::before,
+  .site-header .menu a.active::before {
+    transform: scaleX(1);
+  }
+
+  .header .menu a.active:hover::before,
+  .header .menu a.active:focus-visible::before,
+  .site-header .menu a.active:hover::before,
+  .site-header .menu a.active:focus-visible::before {
+    transform: scaleX(1);
+  }
+}
+
